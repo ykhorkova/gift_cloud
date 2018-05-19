@@ -6,6 +6,13 @@ import { Link } from "react-router-dom";
 // import ButtonComponent from '../components/ButtonComponent.jsx';
 // JavaScript File
 
+
+// export default class Home extends React.Component{
+//     render(){
+//         return();
+//     }
+// }
+
 export default class Home extends React.Component{
     // const condition = '';
     render(){
@@ -24,3 +31,4 @@ export default class Home extends React.Component{
     
     
 }
+

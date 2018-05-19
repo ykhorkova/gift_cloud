@@ -7,16 +7,16 @@ import PropTypes from 'prop-types';
 import $ from "jquery";
 //include bootstrap npm library into the bundle
 import 'bootstrap';
-
 //include your index.scss file into the bundle
-import '../styles/styles-home.scss';
+import '../styles/index.scss';
+
 
 //import your own components
 import Layout from './Layout.jsx';
-import Home from './Home.jsx';
-
+// import Home from './Home.jsx';
+import Footer from './Footer.jsx';
 //render your react application
 ReactDOM.render(
-    <Home />,
+    <Footer />,
     document.querySelector('#app')
 );
