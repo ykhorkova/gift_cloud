@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 // JavaScript File
 
 export default class Home extends React.Component{
+    // const condition = '';
     render(){
         return(
             <div className="container-fluid"> 
