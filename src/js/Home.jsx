@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 // import ButtonComponent from '../components/ButtonComponent.jsx';
 // JavaScript File
 
-export default class Home extends React.Component{
-    render(){
-        return(<h1 className="head-name">Gift Cloud</h1>);
-    }
-}
+// export default class Home extends React.Component{
+//     render(){
+//         return();
+//     }
+// }
