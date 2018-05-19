@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 #pills-tab{
     float: right;
+}
+.h1{
+    font-family: 'Bungee Shade', cursive;
+    color: blue;
+}
+.toprigth{
+    padding-right:80px;
 }

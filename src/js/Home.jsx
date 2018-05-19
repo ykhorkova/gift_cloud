@@ -8,6 +8,18 @@ import { Link } from "react-router-dom";
 
 export default class Home extends React.Component{
     render(){
-        return(<h1 className="head-name">Gift Cloud</h1>);
+        return(
+            <div className="container-fluid"> 
+                <nav className="navbar navbar-light bg-light">
+                    <span className="navbar-brand mb-0 h1">Gift Cloud</span>
+                    <div className="">
+                        <button type="button" className="btn btn-primary">LOG IN</button>
+                        <button type="button" className="btn btn-link">SIGN UP</button>
+                    </div>
+                </nav>  
+            </div>
+        );
     }
+    
+    
 }
