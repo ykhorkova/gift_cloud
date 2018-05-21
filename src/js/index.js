@@ -13,10 +13,11 @@ import '../styles/index.scss';
 
 //import your own components
 import Layout from './Layout.jsx';
-// import Home from './Home.jsx';
 import Footer from './Footer.jsx';
+import Home from './Home.jsx';
+import HomeComponent from './HomeComponent.jsx';
 //render your react application
 ReactDOM.render(
-    <Footer />,
+    <Home />,
     document.querySelector('#app')
 );
