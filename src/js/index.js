@@ -14,11 +14,6 @@ import '../styles/index.scss';
 //import your own components
 import Layout from './Layout.jsx';
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 29b0860d64d6ae477506d477a51e9cdf56f2d0cb
 //render your react application
 ReactDOM.render(
     <Layout />,

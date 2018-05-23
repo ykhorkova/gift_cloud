@@ -17,7 +17,7 @@ export default class HomeCollage extends React.Component{
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
-                <button type="button" className="btn btn-danger grid__item grid__item--title" onClick={() => this.props.history.push("/giftcomponents")}>Get Started</button>
+                <button type="button" className="btn btn-danger grid__item grid__item--title" onClick={() => this.props.history.push('/login')}>Get Started</button>
             </div>
         </div>
             );
