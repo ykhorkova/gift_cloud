@@ -1,8 +1,9 @@
 import React from 'react';
 import Flux from "@4geeksacademy/react-flux-dash";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./views/Home.jsx";
-import Product from "./views/Product.jsx";
+
+import Home from './views/Home.jsx';
+import AccountPage from './views/AccountPage.jsx';
 
 export default class Layout extends Flux.View {
     render() {
@@ -14,7 +15,7 @@ export default class Layout extends Flux.View {
                             <Route exact path="/index.html" component={Home} />
                             <Route exact path="/" component={Home} />
                             <Route exact path="/home" component={Home} />
-                            <Route exact path="/product/:id" component={Product} />
+                            <Route exact path="/account" component={AccountPage} />
                             <Route render={() => <h1>Not found!</h1>} />
                         </Switch>
                     </div>

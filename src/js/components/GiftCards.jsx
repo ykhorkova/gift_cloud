@@ -3,7 +3,7 @@ import React from "react";
 import Flux from "@4geeksacademy/react-flux-dash";
 import { Link } from "react-router-dom";
 
-export default class GiftComponents extends React.Component{
+export default class GiftCards extends React.Component{
     render(){
         return(<div>
             <div className="card-columns">
@@ -13,8 +13,8 @@ export default class GiftComponents extends React.Component{
                         <h5 className="card-title">$65</h5>
                         <div id="button-click">
                             <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
+                        </div> 
+                    </div>    
                 </div>
                 <div className="card">
                     <img className="card-img-top" src="https://placeimg.com/900/600/animals"></img>
