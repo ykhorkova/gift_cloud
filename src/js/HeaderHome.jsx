@@ -18,7 +18,7 @@ export default class HeaderHome extends React.Component{
             <div className="container-fluid"> 
                 <ul className="nav nav-pills justify-content-end">
                     <li className="nav-item">
-                        <a className="nav-link active" href="#">SING UP</a>
+                        <Link className="nav-link active" to="/login">SING UP</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">SING UP</a>

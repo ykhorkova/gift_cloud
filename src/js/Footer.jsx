@@ -3,7 +3,7 @@ import Flux from "@4geeksacademy/react-flux-dash";
 import { Link } from "react-router-dom";
 // JavaScript File
 
-export default class Home extends React.Component{
+export default class Footer extends React.Component{
     render(){
         return(
             <nav className="navbar navbar-expand-md navbar-light bg-light">
