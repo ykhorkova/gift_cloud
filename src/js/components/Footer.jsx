@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default class Footer extends React.Component{
     render(){
-        return(
+        return(<div className="footer">
             <nav className="navbar navbar-expand-md navbar-light bg-light">
                 <div className="collapse navbar-collapse" id="main-page-footbar">
                     <ul className="navbar-nav">
@@ -32,6 +32,7 @@ export default class Footer extends React.Component{
                     </li>
                 </ul>
             </nav>
+        </div>    
 );
     }
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default class GiftCards extends React.Component{
     render(){
-        return(<div>
+        return(<div className="gift-cards">
             <div className="card-columns">
                 <div className="card">
                     <img className="card-img-top" src="https://placeimg.com/900/500/animals"></img>
