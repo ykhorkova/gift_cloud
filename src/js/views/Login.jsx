@@ -7,7 +7,7 @@ export default class Login extends React.Component{
   
    render(){
         return(
-            <div className="container"> 
+            <div className="container col-md-6 offset-md-3"> 
                 <form className="px-4 py-3">
                     <div className="form-group">
                         <label htmlFor="exampleDropdownFormEmail1">Email address</label>
