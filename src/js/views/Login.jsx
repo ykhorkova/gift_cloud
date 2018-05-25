@@ -14,10 +14,10 @@ export default class Login extends React.Component{
                     <div className="col log-conteiner">
                         <h2 className="h5">Log In to Gift Cloud</h2>
                         <a href="#" className="fb btn">
-                            <i className="fb"></i> Login with Facebook
+                            <i className="fab fa-facebook-square fa-2x"></i> Login with Facebook
                         </a>
                         <a href="#" className="google btn">
-                            <i className="fb"></i> Login with Google+
+                            <i className="fab fa-google-plus-square fa-2x clearfix"></i> Login with Google+
                         </a>
                         <div className="social-auth__option social-auth__option--social-disclaimer">
                             <p>We will not post any information to your social accounts</p>
