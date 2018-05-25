@@ -20,6 +20,8 @@ export default class Layout extends Flux.View {
                             <Route exact path="/home" component={Home} />
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/account" component={AccountPage} />
+                            <Route exact path="/find-friends" component={FindFriends} />
+                            <Route exact path="/add-gift" component={AddGift} />
                             <Route render={() => <h1>Not found!</h1>} />
                         </Switch>
                     </div>

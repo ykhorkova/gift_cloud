@@ -17,7 +17,7 @@ export default class HeaderHome extends React.Component{
         return(<div className="header-home">
             <nav className="navbar navbar-expand-md navbar-light bg-light"> 
                 <div className="collapse navbar-collapse" id="main-page-header">
-                    <h1> Gift Cloud</h1>
+                    <h1  className="gift-cloud-name"> Gift Cloud</h1>
                     <ul className="navbar-nav ml-auto" id="header-buttons">
                         <li className="nav-item" id="login-header-button">
                             <Link className="nav-link active" to="/login">LOG IN</Link>
