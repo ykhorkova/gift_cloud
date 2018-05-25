@@ -1,33 +1,41 @@
 import React from "react";
 import Flux from "@4geeksacademy/react-flux-dash";
 import { Link } from "react-router-dom";
+import HeaderHome from "../components/HeaderHome.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default class Login extends React.Component{
-  
-  
-   render(){
+    render(){
         return(
-            <div className="container col-md-6 offset-md-3"> 
-                <form className="px-4 py-3">
-                    <div className="form-group">
-                        <label htmlFor="exampleDropdownFormEmail1">Email address</label>
-                        <input type="email" className="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" />
+            <div classNameName="conteiner">
+                <HeaderHome />
+                <div className="row align-items-center">
+                    <div className="col"></div>
+                    <div className="col log-conteiner">
+                        <h2 className="h5">Log In to Gift Cloud</h2>
+                        <a href="#" className="fb btn">
+                            <i className="fb"></i> Login with Facebook
+                        </a>
+                        <a href="#" className="google btn">
+                            <i className="fb"></i> Login with Google+
+                        </a>
+                        <div className="social-auth__option social-auth__option--social-disclaimer">
+                            <p>We will not post any information to your social accounts</p>
+                        </div>
+                        <hr />
+                        <input type="text" name="username" placeholder="you@example.com" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <input type="submit" value="Login" />
+                        <div className="center-align form-meta whitespace-top">
+                            <a href="#">Forgot password?</a> 
+                            <span className="content-divider">|</span> 
+                            <a href="#">Sign up for Gift Cloud</a>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" className="form-control" id="exampleDropdownFormPassword1" placeholder="Password" />
-                    </div>
-                    <div className="form-check">
-                        <input type="checkbox" className="form-check-input" id="dropdownCheck" />
-                        <label className="form-check-label" htmlFor="dropdownCheck">Remember me</label>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Sign in</button>
-                </form>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">New around here? Sign up</a>
-                <a className="dropdown-item" href="#">Forgot password?</a>
+                    <div className="col"></div>
+                </div>
+                <Footer />
             </div>
-    );
-       
+         );
    }
 }

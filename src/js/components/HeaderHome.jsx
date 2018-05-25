@@ -14,17 +14,22 @@ export default class HeaderHome extends React.Component{
       
   
    render(){
-        return(
-            <div className="container-fluid"> 
-                <ul className="nav nav-pills justify-content-end">
-                    <li className="nav-item">
-                        <Link className="nav-link active" to="/login">SING UP</Link>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">SING UP</a>
-                    </li>
-                </ul>
-            </div>
+        return(<div className="header-home">
+            <nav className="navbar navbar-expand-md navbar-light bg-light"> 
+                <div className="collapse navbar-collapse" id="main-page-header">
+                    <h1> Gift Cloud</h1>
+                    <ul className="navbar-nav ml-auto" id="header-buttons">
+                        <li className="nav-item" id="login-header-button">
+                            <Link className="nav-link active" to="/login">LOG IN</Link>
+                        </li>
+                        <li className="nav-item" id="signup-header-button">
+                            <a className="nav-link" href="#">SING UP</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+            
     );
        
    }

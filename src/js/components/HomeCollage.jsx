@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default class HomeCollage extends React.Component{
     render(){
-        return(<div>
+        return(<div className="home-collage">
             <div className="grid">
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
@@ -17,7 +17,7 @@ export default class HomeCollage extends React.Component{
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
-                <button type="button" className="btn btn-danger grid__item grid__item--title" onClick={() => this.props.history.push('/login')}>Get Started</button>
+                <Link className="btn btn-danger grid__item grid__item--title" to='/login'>Get Started</Link>
             </div>
         </div>
             );

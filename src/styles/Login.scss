@@ -1,4 +1,102 @@
-.boxloging {
-    padding: 200px;
-    padding-left: 100px;
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+/* style the container */
+.log-conteiner {
+    //position: inherit;
+    //width: 300px;
+    border: 25px solid #f2f2f2;
+    padding: 20px 0 30px 0;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    
+} 
+
+.log-conteiner .h5{
+    text-align:center;
+    color: #294a6b;
+    font-size: 1.625rem;
+    font-weight: 600;
+}  
+
+
+.log-conteiner .fb {
+    background-color: #3B5998;
+    color: white;
+    text-align: center;
+    
+    
+}
+
+.log-conteiner .google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.log-conteiner .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.log-conteiner input, .btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+
+.log-conteiner input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.log-conteiner input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.log-conteiner .center-align {
+    text-align: center;
+}
+
+.log-conteiner .form-meta {
+    font-size: .8125rem;
+    margin-top: .625rem;
+}
+
+.log-conteiner .whitespace-top {
+    padding-top: 2.5rem;
+}
+
+.log-conteiner .social-auth__option {
+    padding-top: 1.25em;
+    text-align:center;
+}
+.log-conteiner  .social-auth__option--social-disclaimer p {
+    color: #65778a;
+    font-size: .625rem;
 }
