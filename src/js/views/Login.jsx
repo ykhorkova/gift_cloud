@@ -7,14 +7,14 @@ import Footer from "../components/Footer.jsx";
 export default class Login extends React.Component{
     render(){
         return(
-            <div classNameName="conteiner">
+            <div className="conteiner">
                 <HeaderHome />
                 <div className="row align-items-center">
                     <div className="col"></div>
                     <div className="col log-conteiner">
                         <h2 className="h5">Log In to Gift Cloud</h2>
                         <a href="#" className="fb btn">
-                            <i className="fab fa-facebook-square fa-2x"></i> Login with Facebook
+                            <i className="fab fa-facebook-square fa-2x clearfix"></i> Login with Facebook
                         </a>
                         <a href="#" className="google btn">
                             <i className="fab fa-google-plus-square fa-2x clearfix"></i> Login with Google+
