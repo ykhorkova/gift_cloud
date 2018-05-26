@@ -4,34 +4,31 @@ import Flux from "@4geeksacademy/react-flux-dash";
 import { Link } from "react-router-dom";
 
 import CardComponent from '../components/CardComponent.jsx';
+import Events from '../components/Events.jsx';
 
-export default class AccountGiftPage extends React.Component{
+export default class AccountGiftBody extends React.Component{
     render(){
-        return(<div className="gift-cards">
-            <div className="card-columns">
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-                <CardComponent />
-            </div>
-            <div className="sidecolumn">
-                <div className="upcoming-events">
-                </div>
-                <div className="calendar">
+        return(<div className="account-gift-body">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-8">
+                        <CardComponent />
+                    </div>
+                    <div className="col-4">
+                        <div className="upcoming-events">
+                            <Events />    
+                        </div>
+                        <span className="calendar">Calendar</span>
+                    </div>
                 </div>
             </div>
         </div>
             );
     }
 }
-           
+
     
+
 
             // <div className="card-columns">
             //     <div className="card">

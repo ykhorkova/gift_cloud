@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 import Footer from '../components/Footer.jsx';
-import AccountGiftPage from '../components/AccountGiftPage.jsx';
+import AccountGiftBody from '../components/AccountGiftBody.jsx';
 import HeaderAccount from '../components/HeaderAccount.jsx';
 
 
@@ -13,7 +13,7 @@ export default class Home extends React.Component{
    render(){
         return(<div>
             <HeaderAccount />
-            <AccountGiftPage />
+            <AccountGiftBody />
             <Footer />
         </div>
         );
