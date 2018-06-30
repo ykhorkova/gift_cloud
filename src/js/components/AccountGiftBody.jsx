@@ -5,20 +5,30 @@ import { Link } from "react-router-dom";
 
 import CardComponent from '../components/CardComponent.jsx';
 import Events from '../components/Events.jsx';
+import FilterComponent from '../components/FilterComponent.jsx';
+import PagesCount from '../components/PagesCount.jsx';
+import Calendar from '../components/Calendar.jsx';
 
 export default class AccountGiftBody extends React.Component{
     render(){
         return(<div className="account-gift-body">
             <div className="container-fluid">
-                <div className="row">
+                <div className="row body-row">
                     <div className="col-8">
+                        <div className="row smaller-row">
+                            <div className="col-7">
+                                <FilterComponent className="FilterComponent"/>
+                            </div>
+                            <div className="col-5">
+                                <PagesCount className="PagesCount" />
+                            </div>
+                        </div>
                         <CardComponent />
                     </div>
                     <div className="col-4">
                         <div className="upcoming-events">
-                            <Events />    
+                            <Events />
                         </div>
-                        <span className="calendar">Calendar</span>
                     </div>
                 </div>
             </div>
@@ -26,107 +36,3 @@ export default class AccountGiftBody extends React.Component{
             );
     }
 }
-
-    
-
-
-            // <div className="card-columns">
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/500/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div> 
-            //         </div>    
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/600/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/300/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/400/animals"></img>
-            //         <div className="card-body">    
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/300/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/400/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/900/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/800/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>   
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/600/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>  
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/600/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>  
-            //     </div>
-            //     <div className="card">
-            //         <img className="card-img-top" src="https://placeimg.com/900/400/animals"></img>
-            //         <div className="card-body">
-            //             <h5 className="card-title">$65</h5>
-            //             <div id="button-click">
-            //                 <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-            //             </div>
-            //         </div>  
-            //     </div>

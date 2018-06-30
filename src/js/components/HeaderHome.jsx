@@ -23,7 +23,7 @@ export default class HeaderHome extends React.Component{
                             <Link className="nav-link active" to="/login">LOG IN</Link>
                         </li>
                         <li className="nav-item" id="signup-header-button">
-                            <a className="nav-link" href="#">SING UP</a>
+                            <Link className="nav-link" to='/signup'>SING UP</Link>
                         </li>
                     </ul>
                 </div>

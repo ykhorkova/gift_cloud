@@ -7,7 +7,7 @@ import Footer from "../components/Footer.jsx";
 export default class Login extends React.Component{
     render(){
         return(
-            <div classNameName="conteiner">
+            <div className="conteiner">
                 <HeaderHome />
                 <div className="row align-items-center">
                     <div className="col"></div>
@@ -17,7 +17,7 @@ export default class Login extends React.Component{
                             <i className="fab fa-facebook-square fa-2x"></i> Login with Facebook
                         </a>
                         <a href="#" className="google btn">
-                            <i className="fab fa-google-plus-square fa-2x clearfix"></i> Login with Google+
+                            <i className="fab fa-google-plus-square fa-2x"></i> Login with Google+
                         </a>
                         <div className="social-auth__option social-auth__option--social-disclaimer">
                             <p>We will not post any information to your social accounts</p>
