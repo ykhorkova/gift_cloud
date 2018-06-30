@@ -10,14 +10,14 @@ export default class HeaderAccount extends React.Component{
                 <div className="collapse navbar-collapse" id="main-page-header">
                     <h1  className="gift-cloud-name"> Gift Cloud</h1>
                     <ul className="navbar-nav ml-auto" id="header-buttons">
-                        <li className="nav-item" id="login-header-button">
-                            <Link className="nav-link active" to="/AddGift">Add a Gift</Link>
+                        <li>
+                            <img className="notification-icon" src="https://cdn4.iconfinder.com/data/icons/web-pack/64/bell-512.png"></img>
                         </li>
-                        <li className="nav-item" id="signup-header-button">
-                            <Link className="nav-link active" to="/FindFriends">Find Friends</Link>
+                        <li className="nav-item" id="add-gift-header-button">
+                            <Link className="nav-link active addGift" to="/AddGift">Add a Gift</Link>
                         </li>
-                        <li className="notifiction-icon">
-                            <i className="fa fa-bell-o" aria-hidden="true"></i>
+                        <li className="nav-item" id="find-friends-header-button">
+                            <Link className="nav-link active findFriends" to="/FindFriends">Find Friends</Link>
                         </li>
                         <li className="dropdown-icon">
                             <div className="dropdown">
@@ -26,7 +26,7 @@ export default class HeaderAccount extends React.Component{
                                         <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/nerd-face.png"></img>
                                     </span>
                                 </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <div className="dropdown-menu md" aria-labelledby="dropdownMenu2">
                                     <a className="dropdown-item" href="#">Your Nickname</a>
                                     <div className="dropdown-divider">
                                     </div>

@@ -2,50 +2,14 @@
 
 .account-gift-body{
 
-
-  
+.body-row{
+  padding: 5px;
 }
 
+.FilterComponent, .PagesCount{
+    padding: 0;
+    border: none;
+    color: black;
+}
 
-
-
-
-
-// .card-body{
-//   line-height: 40px;
-//   height: 40px;
-// .grid-container {
-// display: grid;
-
-// }
-
-
-// .grid-container .left,
-// .right {
-// padding: 10px;
-// }
-
-// /* Style the left column */
-// .left {
-// grid-area: left;
-// width: 70%;
-
-// }
-
-// /* Style the right column */
-// .right {
-// grid-area: right;
-//   background-color: white;
-// }
-// }
-
-
-// #button-click{
-//   float: right;
-//   padding-bottom: 10px;
-// }
-
-// .card-title{
-//   float: left;
-//   padding-top: 10px;
-// }
+}
