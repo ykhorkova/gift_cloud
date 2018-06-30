@@ -9,16 +9,26 @@ export default class FindFriends extends React.Component{
         return(
             <div>
                 <HeaderHome />
-                <div className="conteiner-fuid">
+                <div className="conteiner">
                     <div className="row">
-                        <div className="col-md-3">
-                            <div className="dropdown-menu">
-                                <a className="dropdown-item" href="#">Regular link</a>
-                                <a className="dropdown-item active" href="#">Active link</a>
-                                <a className="dropdown-item" href="#">Another link</a>
+                        <div className="col-3 conteinerleft">
+                            
+                        </div>
+                        <div className="col-8 conteinercenter">
+                            <h2>Find Friends</h2>
+                            <p>Search for someone by name, email address, username, or organization.</p>
+                            <form>
+                                <input className="input" type="text" name="search" placeholder="Search.." />
+                            </form>
+                            <div className="">
+                                <title>icon-hint</title>
+                                <div className="content">
+                                    <p>Not seeing who you’re looking for? 
+                                        <a href="#">Invite them!</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-md-6">B</div>
                     </div>
                 </div>
                 <Footer />

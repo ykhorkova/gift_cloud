@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+.login{
 
 /* style the container */
 .log-conteiner {
@@ -103,4 +104,6 @@ input[type=submit] {
 .log-conteiner  .social-auth__option--social-disclaimer p {
     color: #65778a;
     font-size: .625rem;
+}
+
 }

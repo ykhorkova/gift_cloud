@@ -7,7 +7,7 @@ import Footer from "../components/Footer.jsx";
 export default class Login extends React.Component{
     render(){
         return(
-            <div className="conteiner">
+            <div className="login">
                 <HeaderHome />
                 <div className="row align-items-center">
                     <div className="col"></div>
