@@ -1,7 +1,10 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
 .header-account{
-    
+position:  sticky;
+    z-index: 1500;
+    top: 0;
+
 img{
     width: 40px;
     border-radius: 50%;

@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
 .footer{
-    
+  top: 0;
 #copyrights-footer{
    list-style-type: none;
 }
@@ -9,5 +9,6 @@
 .secondary-navbar-nav{
     margin: auto;
     float: right;
+    height: calc(100% - 72px - 590px); 
 }
 } 
