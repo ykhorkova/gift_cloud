@@ -12,7 +12,6 @@ $dark-gray: #6c6763;
 }
 
 body {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/login_background.jpg') no-repeat center center fixed;
   background-size: cover;
   font: 13px/23px "Lato", Arial, sans-serif;
   color: $text-color;
@@ -22,7 +21,6 @@ body {
 .container {
   margin: 0 auto;
   width: 500px;
-  height: 500px;
   background: white;
   border-radius: 500px;
   border: 8px solid rgba(245,245,245, 0.5);

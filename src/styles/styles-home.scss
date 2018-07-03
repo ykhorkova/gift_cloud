@@ -1,5 +1,7 @@
 @import '~bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+
+    
 #pills-tab{
     float: right;
 }
@@ -9,4 +11,8 @@
 }
 .toprigth{
     padding-right:80px;
+}
+
+.home{
+    background-color: white;
 }
