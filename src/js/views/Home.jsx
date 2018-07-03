@@ -9,7 +9,7 @@ import HeaderHome from '../components/HeaderHome.jsx';
 
 export default class Home extends React.Component{
     render(){
-        return(<div>
+        return(<div className="home">
             <HeaderHome />
             <HomeCollage />
             <Footer />

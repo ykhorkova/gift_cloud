@@ -1,9 +1,16 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-.login{
+.login-form{
+    width: 500px;
+    min-height: 100%;
+    margin-bottom: -50px;
+    margin: auto;
+    
+.push{
+    height: 50px;
+}    
 
-/* style the container */
-.log-conteiner {
+.log-container {
     //position: inherit;
     //width: 300px;
     border: 25px solid #f2f2f2;
@@ -16,7 +23,7 @@
     
 } 
 
-.log-conteiner .h5{
+.log-container .h5{
     text-align:center;
     color: #294a6b;
     font-size: 1.625rem;
@@ -24,7 +31,7 @@
 }  
 
 
-.log-conteiner .fb {
+.log-container .fb {
     background-color: #3B5998;
     color: white;
     text-align: center;
@@ -32,12 +39,12 @@
     
 }
 
-.log-conteiner .google {
+.log-container .google {
   background-color: #dd4b39;
   color: white;
 }
 
-.log-conteiner .clearfix {
+.log-container .clearfix {
     float: left;
 }
 
@@ -48,7 +55,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-.log-conteiner .fa {
+.log-container .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
@@ -59,7 +66,7 @@ input[type=submit] {
 
 
 
-.log-conteiner input, .btn {
+.log-container input, .btn {
   width: 100%;
   padding: 12px;
   border: none;
@@ -73,35 +80,35 @@ input[type=submit] {
 }
 
 
-.log-conteiner input[type=submit] {
+.log-container input[type=submit] {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
 }
 
-.log-conteiner input[type=submit]:hover {
+.log-container input[type=submit]:hover {
   background-color: #45a049;
 }
 
 
-.log-conteiner .center-align {
+.log-container .center-align {
     text-align: center;
 }
 
-.log-conteiner .form-meta {
+.log-container .form-meta {
     font-size: .8125rem;
     margin-top: .625rem;
 }
 
-.log-conteiner .whitespace-top {
+.log-container .whitespace-top {
     padding-top: 2.5rem;
 }
 
-.log-conteiner .social-auth__option {
+.log-container .social-auth__option {
     padding-top: 1.25em;
     text-align:center;
 }
-.log-conteiner  .social-auth__option--social-disclaimer p {
+.log-container  .social-auth__option--social-disclaimer p {
     color: #65778a;
     font-size: .625rem;
 }

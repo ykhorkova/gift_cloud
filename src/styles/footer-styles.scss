@@ -1,7 +1,21 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+
+.push {
+  height: 50px;
+}
+
 .footer{
+<<<<<<< HEAD
   top: 0;
+=======
+    background-color: purple;
+    height: 50px;
+    margin-top: -50px;
+    
+   
+    
+>>>>>>> d2df3c63ec93ef34fa087c05d843d4d3e110c680
 #copyrights-footer{
    list-style-type: none;
 }

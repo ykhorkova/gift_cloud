@@ -1,15 +1,12 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
 
-.SignUp{
-    
-    .sign-up-with-email-btn{
-        border: solid lightBlue 0.5px;
-        border-radius: 5px;
-        background-color: white;
-    }
-    
-    .log-container {
+.sign-up-form{
+    min-height: 100%;
+    margin-bottom: -50px;
+    width: 500px;
+    /* style the container */
+.log-container {
     //position: inherit;
     //width: 300px;
     border: 25px solid #f2f2f2;
@@ -44,8 +41,7 @@
 }
 
 .log-container .clearfix {
-    padding: 3px 0;
-    border: 3px solid green;
+    float: left;
 }
 
 /* style the submit button */
@@ -63,6 +59,7 @@ input[type=submit] {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 
 .log-container input, .btn {
@@ -90,7 +87,7 @@ input[type=submit] {
 }
 
 
-.log-v .center-align {
+.log-container .center-align {
     text-align: center;
 }
 
@@ -99,7 +96,7 @@ input[type=submit] {
     margin-top: .625rem;
 }
 
-.log-conteiner .whitespace-top {
+.log-container .whitespace-top {
     padding-top: 2.5rem;
 }
 
@@ -111,9 +108,5 @@ input[type=submit] {
     color: #65778a;
     font-size: .625rem;
 }
-    
-    
-    
-    
-    
+
 }

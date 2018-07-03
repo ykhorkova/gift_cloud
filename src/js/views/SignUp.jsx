@@ -10,7 +10,7 @@ export default class SignUp extends React.Component{
     render(){
         return(<div>
             <HeaderHome />
-            <SignUpForm /> 
+            <SignUpForm />
             <Footer />
         </div>
             );
