@@ -1,20 +1,92 @@
-@import '~bootstrap/scss/bootstrap.scss';
 
 .card-component{
-
   
-.card-body{
-  line-height: 40px;
-  height: 40px;
+  $text-color: #a6a4a2;
+  $purple: #A993CB;
+  $dark-gray: #6c6763;
+  
+  font-family: 'Raleway', sans-serif;
+
+.card-header{
+  padding: 0;
 }
 
-#button-click{
+img{
+  width: 100%;
+}
+
+.gift-priority{
+  color: red;
+  font-weight: bold;
   float: right;
-  padding-bottom: 10px;
+  position: absolute;
+  right: 5px;
+
+}
+
+.price{
+  border-style: 0.5px solid  $dark-gray;
+  border-radius: 50%;
+  background-color:  $text-color;
+  height: 27px;
+  width: 27px;
+  color: ghostWhite;
+  font-style: bold;
+  padding-top: 5px;
+  margin: auto;
+  position: absolute;
+  top: 80px;
+  right: 70px;
+}
+
+.card-body{
+  height: 10%;
+  text-align: center;
+  padding: 5px;
+}
+
+.card-title, .store-name, .price{
+  text-align: center;
+}
+
+.store-name, .price, .date-added, .more{
+  font-size: .775rem;
+}
+
+.store-name{
+  margin-bottom: 3px;
+  
+}
+.card-title{
+  color: #A993CB;
+  font-size: .875rem;
+  font-weight: bold;
+}
+
+.card-footer{
+  margin: auto;
+  padding: 5px;
+  border-style: none;
+  background-color: white;
+}
+
+.column{
+  float: left;
+  width: 50%;
+  padding-right: 0;
+}
+
+.date-added{
+  margin: auto;
+}
+
+.more{
+  border-style: none;
+  float: right !important;
 }
 
 .card-title{
-  float: left;
   padding-top: 10px;
 }
+
 }

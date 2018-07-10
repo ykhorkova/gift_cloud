@@ -35,6 +35,7 @@ export default class Layout extends Flux.View {
                     </div>
                 </BrowserRouter>
             </div>
+            
         );
     }
 }

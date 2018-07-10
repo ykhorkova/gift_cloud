@@ -17,7 +17,7 @@ export default class HomeCollage extends React.Component{
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
                 <div className="grid__item"></div>
-                <Link className="btn btn-danger grid__item grid__item--title" to='/signup'>Get Started</Link>
+                <Link className="btn get-started-btn grid__item grid__item--title" to='/signup'>Get Started</Link>
             </div>
         </div>
             );

@@ -1,16 +1,36 @@
-@import '~bootstrap/scss/bootstrap.scss';
-
 .header-account{
-    background-color: purple;
+    
+    $text-color: #a6a4a2;
+    $purple: #A993CB;
+    $dark-gray: #6c6763;
+    
+    background-color: #F8F8FF;
+    
+.gift-cloud-name{
+   text-transform: uppercase;
+    color: $dark-gray;
+    font-size: 20px;
+    font-family: Raleway;
+    font-weight: bold;
+    padding-left: 10px;
+}    
+    
+    
+.nav-link{
+    color: $dark-gray !important;
+    font-family: 'Raleway', sans-serif, bold 700;
+} 
+#about-header-button{
+    margin-top: 7px;
+    
+}
+Link:hover{
+    color: black;
+}
     
 img{
-    width: 40px;
+    width: 50px;
     border-radius: 50%;
-}
-
-.notification-icon{
-    width: 25px;
-    padding-top: 15px;
 }
 
 .ul.li{

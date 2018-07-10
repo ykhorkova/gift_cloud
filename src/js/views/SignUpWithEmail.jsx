@@ -13,6 +13,7 @@ export default class SignUpWithEmail extends React.Component{
             <HeaderHome />
             <EmailSignUp /> 
             <Footer />
+            
         </div>
         );
    }

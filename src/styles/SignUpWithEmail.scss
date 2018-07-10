@@ -4,50 +4,34 @@
 .sign-up-with-email{
 
 $text-color: #a6a4a2;
-$purple: #b993d6;
+$purple: #A993CB;
 $dark-gray: #6c6763;
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
   background-size: cover;
-  font: 13px/23px "Lato", Arial, sans-serif;
+  font: 13px/23px 'Raleway', sans-serif;
   color: $text-color;
   padding: 40px 0;
-}
 
 .container {
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin: 0 auto;
   width: 500px;
   background: white;
-  border-radius: 500px;
-  border: 8px solid rgba(245,245,245, 0.5);
+  border-radius: 10%;
+  border: 5px solid rgba(245,245,245, 0.5);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-
-hr {
-  border: 0; 
-  height: 1px; 
-  background: #e9e6e2;
-  margin: 15px 100px;
-}
-
-a {
-  text-decoration: none;
-  color: $purple;
   
-  &:hover {
+  login:hover, signup:hover {
     text-decoration: underline;
     color: lighten($purple, 5%);
   }
-}
 
 .header {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 50px;
   font-size: 16px;
   
   
@@ -103,10 +87,4 @@ input[type="submit"] {
 ::-moz-placeholder {
   font-size: 13px;
 } 
-   
-    
-    
-    
-    
-    
 }

@@ -1,31 +1,119 @@
-@import '~bootstrap/scss/bootstrap.scss';
+div.col-4.sidebar-account-view{  
+  padding-right: 0;  
+}
 
 .events{
-    border: 0.5px solid lightgray;
-    border-radius: 5%;
+$text-color: #a6a4a2;
+$purple: #A993CB;
+$dark-gray: #6c6763;    
     
-#event-person-icon{
-        width: 35px;
-        border-radius: 50%;
-    }
-    
-.row{
-    padding: 5px;
-    text-align: center;
-}   
+  background: ghostWhite;
+  font-family: "Open Sans"; 
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
 
-
-.name-of-person{
-    font-family: 'Dosis', sans-serif;
-    font-size: 20px;
-    margin: auto;
-
-}    
-
-.event-name{
-    font-style: cursive;
-    font-size: 15px;
-    padding-top: 2px;
-    margin: auto;
+.spacer {
+  border-bottom: 1px solid #a6a4a2;
 }
+
+.upcoming-events-title{
+  text-transform: uppercase;
+  color: #6c6763;
+  line-height: 25px;
+  font-size: 30px;
+  font-family: Raleway;
+  font-weight: bold;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.upcoming-events{    
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.event-list {
+  display: block;
+  border-right: 1px solid #e5e5e5;
+}
+
+.event {
+  text-decoration: none;
+}
+
+.event:nth-child(3n+1) .event-container {
+  border-left-color: $purple;
+}
+
+.event:nth-child(3n) .event-container {
+  border-left-color: $dark-gray;
+}
+
+.event-container {
+  color: $purple;
+  transition: all .2s ease;
+  background: ghostWhite;
+  border-left: 3px solid;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.event-container:hover {
+  border-left-width: 7px;
+  background: white;
+}
+
+.date-container {
+  display: inline-block;
+  width: 2.3em;
+  padding-left: 13px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  margin-right: 6px;
+  font-family: Oswald;
+  font-weight: 700;
+  color: $purple;
+}
+
+.date {
+  font-size: 2.2em;
+}
+
+.month {
+  display: block;
+  font-size: .4em;
+  font-weight: 400;
+  margin-top: -.8em;
+  text-transform: uppercase;
+}
+
+.detail-container {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3px;
+  margin-left: 13px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: Oswald;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: $purple;
+}
+
+.description {
+  display: block;
+  font-family: .9em 'Raleway', sans-serif;
+  color: $dark-gray;
+}
+
+
+
+
+
+
 }

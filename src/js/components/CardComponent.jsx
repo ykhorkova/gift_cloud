@@ -5,92 +5,29 @@ import { Link } from "react-router-dom";
 
 export default class CardComponent extends React.Component{
     render(){
-        return(<div classNam="card-component">
+        return(<div className="card-component">
             <div className="card-columns">
                 <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/500/tech"></img>
+                    <div className="card-header">
+                        <span className="gift-priority"><i className="fas fa-bookmark"></i></span> 
+                        <img className="card-img-top" src="https://placeimg.com/900/500/tech"></img>
+                        <p className="price"> $27 </p>
+                    </div>
                     <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div> 
+                        <h5 className="card-title">Item Tittle Example</h5>
+                        <p className="store-name">Amazon</p>
                     </div>    
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/600/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
+                    <div className="card-footer row">
+                        <div className="column">
+                            <p className="date-added">May 2018</p>
                         </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/300/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/400/tech"></img>
-                    <div className="card-body">    
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/300/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/400/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/900/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/800/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>   
-                </div>
-                <div className="card">
-                    <img className="card-img-top" src="https://placeimg.com/900/600/tech"></img>
-                    <div className="card-body">
-                        <h5 className="card-title">$65</h5>
-                        <div id="button-click">
-                            <button type="button" id="button-click" className="btn btn-danger">Get It</button>
-                        </div>
-                    </div>  
-                </div>
+                        <div className="column">
+                            <button type="button" className="more">...</button>
+                        </div>    
+                    </div>
+                </div>    
             </div>
         </div>
-                    );
+        );
     }
 }
-       

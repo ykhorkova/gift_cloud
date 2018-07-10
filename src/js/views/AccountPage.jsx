@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Footer from '../components/Footer.jsx';
 import AccountGiftBody from '../components/AccountGiftBody.jsx';
 import HeaderAccount from '../components/HeaderAccount.jsx';
-
+import Events from '../components/Events.jsx';
 
 
 export default class Home extends React.Component{
