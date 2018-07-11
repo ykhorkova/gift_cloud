@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export default class Footer extends React.Component{
     render(){
         return(<div className="footer">
-            <nav className="navbar navbar-expand-md navbar-light bg-light">
+            <nav className="navbar navbar-expand-md">
                 <div className="collapse navbar-collapse" id="main-page-footbar">
                     <ul className="navbar-nav">
                         <li className="nav-item" id="login-footer-button">
-                            <a className="nav-link" href="#">Login </a>
+                            <Link className="nav-link" to="/login">Login </Link>
                         </li>
                         <li className="nav-item" id="about-footer-button">
                             <a className="nav-link" href="#">About</a>

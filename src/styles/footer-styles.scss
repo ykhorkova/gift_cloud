@@ -1,11 +1,14 @@
-@import '~bootstrap/scss/bootstrap.scss';
-
-
-.push {
-  height: 50px;
-}
 
 .footer{
+    background-color: #F8F8FF;
+    height: 50px;
+    // margin-top: -50px;
+    
+.nav-link{
+    color: #6c6763 !important;
+    font-family: 'Raleway', sans-serif, bold 700;
+}    
+    
 
   top: 0;
 

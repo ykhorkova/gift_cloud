@@ -25,10 +25,8 @@ export default class AccountGiftBody extends React.Component{
                         </div>
                         <CardComponent />
                     </div>
-                    <div className="col-4">
-                        <div className="upcoming-events">
-                            <Events />
-                        </div>
+                    <div className="col-4 sidebar-account-view">
+                        <Events />
                     </div>
                 </div>
             </div>
@@ -36,3 +34,5 @@ export default class AccountGiftBody extends React.Component{
             );
     }
 }
+                        // <div className="upcoming-events">
+                        // </div>
