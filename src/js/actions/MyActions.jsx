@@ -5,42 +5,29 @@ class UserActions extends Flux.Action{
     
     constructor(){
         super();
-        // this.host = 'https://python-contact-list-ykhorkova.c9users.io';
+        // this.host = 'https://ide.c9.io/ykhorkova/contact-list-project';
     }
     
-    getContacts(){
-        fetch(this.host+'/signup/')
-            .then((resp) => {
-                return resp.json();
-            })
-            .then((contacts) => {
-                this.dispatch('MyStore.setContacts',contacts);
-            }) 
-            .catch((error) => {
-            console.log("There was an error ", error);
-        });
-    }
-    
-    // addContact(incomingContact){
-    //     incomingContact.agenda_slug="Yuliia";
-    //     fetch(this.host+'/contact/', {
-    //         method: 'PUT',
-    //         body: JSON.stringify(incomingContact),
-    //         headers:{ 
-    //             'Accept':  'application/json',
-    //             'Content-Type': 'application/json'
-    //         }
-    //         }).then(res => res.json())
-    //         .then(response => {
-    //             console.log('Add contact action!');
-    //                 let contacts = MyStore.getContacts();
-    //                 contacts.push(response);
-    //                 this.dispatch('MyStore.setContacts',contacts);
-    //                 console.log('Success:', response);
-    //                 console.log(MyStore.getContacts());
-    //         })
-    //         .catch(error => console.error('Error:', error));
-    // }
+    createAccount(incomingAccount){
+    // incomingUser.agenda_slug="Yuliia";
+    fetch(this.host+'/contact/', {
+        method: 'PUT',
+        body: JSON.stringify(incomingAccount),
+        headers:{ 
+            'Accept':  'application/json',
+            'Content-Type': 'application/json'
+        }
+        }).then(res => res.json())
+        .then(response => {
+            console.log('Add an account action!');
+                let account = MyStore.getAccounts();
+                account.push(response);
+                this.dispatch('MyStore.setAccounts',account);
+                console.log('Success:', response);
+                console.log(MyStore.getAccounts());
+        })
+        .catch(error => console.error('Error:', error));
+}
     
     
     // deleteContact(id){

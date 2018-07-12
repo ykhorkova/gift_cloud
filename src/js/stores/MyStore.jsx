@@ -5,21 +5,21 @@ class MyStore extends Flux.Store{
     
     constructor(){
         super();
-        // this.state = {
-        //     contacts: []
-        // };
+        this.state = {
+            accounts: []
+        };
     }
     
-//     _setContacts(contacts){
-//         console.log('setContacts on the store',contacts);
+    _setAccounts(accounts){
+        console.log('setAccounts on the store',accounts);
         
-//         this.setStoreState({
-//             contacts: contacts
-//         }).emit();
-//     }
+        this.setStoreState({
+            accounts: accounts
+        }).emit();
+    }
     
-//     getContacts(){
-//         return this.state.contacts;
-//     }
+    getAccounts(){
+        return this.state.accounts;
+    }
 }
 export default new MyStore();
