@@ -5,12 +5,12 @@ class UserActions extends Flux.Action{
     
     constructor(){
         super();
-        // this.host = 'https://ide.c9.io/ykhorkova/contact-list-project';
+        this.host = 'https://phyton-giftcloud-yelic29.c9users.io';
     }
     
     createAccount(incomingAccount){
     // incomingUser.agenda_slug="Yuliia";
-    fetch(this.host+'/contact/', {
+    fetch(this.host+'/profile/', {
         method: 'PUT',
         body: JSON.stringify(incomingAccount),
         headers:{ 
