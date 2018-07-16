@@ -6,9 +6,30 @@ class MyStore extends Flux.Store{
     constructor(){
         super();
         this.state = {
-            accounts: []
+            accountCreated: false
         };
     }
+    
+    _setAccountCreated(status){
+        console.log('setAccounts on the store',status);
+        
+        this.setStoreState({
+            accountCreated: status
+        }).emit();
+    }
+    
+    getAccountCreated(){
+        return this.state.accountCreated;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     _setAccounts(accounts){
         console.log('setAccounts on the store',accounts);

@@ -1,5 +1,5 @@
 import Flux from '@4geeksacademy/react-flux-dash';
-import MyStore from '../stores/MyStore.js';
+import MyStore from '../stores/MyStore.jsx';
 
 class UserActions extends Flux.Action{
     
@@ -9,25 +9,25 @@ class UserActions extends Flux.Action{
     }
     
     createAccount(incomingAccount){
-    // incomingUser.agenda_slug="Yuliia";
-    fetch(this.host+'/profile/', {
-        method: 'PUT',
-        body: JSON.stringify(incomingAccount),
-        headers:{ 
-            'Accept':  'application/json',
-            'Content-Type': 'application/json'
-        }
-        }).then(res => res.json())
-        .then(response => {
-            console.log('Add an account action!');
-                let account = MyStore.getAccounts();
-                account.push(response);
-                this.dispatch('MyStore.setAccounts',account);
-                console.log('Success:', response);
-                console.log(MyStore.getAccounts());
-        })
-        .catch(error => console.error('Error:', error));
-}
+        fetch('https://phyton-giftcloud-yelic29.c9users.io/profile/', {
+                method: 'PUT',
+                body: JSON.stringify(incomingAccount),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+            .then(response => {
+                console.log('Add an account action!');
+                    // let account = MyStore.getAccounts();
+                    // account.push(response);
+                    this.dispatch('MyStore.setAccountCreated',true);
+                // return true;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                this.dispatch('MyStore.setAccountCreated',false);
+            });
+    }
     
     
     // deleteContact(id){
