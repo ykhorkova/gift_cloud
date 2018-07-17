@@ -5,21 +5,42 @@ class MyStore extends Flux.Store{
     
     constructor(){
         super();
-        // this.state = {
-        //     contacts: []
-        // };
+        this.state = {
+            accountCreated: false
+        };
     }
     
-//     _setContacts(contacts){
-//         console.log('setContacts on the store',contacts);
+    _setAccountCreated(status){
+        console.log('setAccounts on the store',status);
         
-//         this.setStoreState({
-//             contacts: contacts
-//         }).emit();
-//     }
+        this.setStoreState({
+            accountCreated: status
+        }).emit();
+    }
     
-//     getContacts(){
-//         return this.state.contacts;
-//     }
+    getAccountCreated(){
+        return this.state.accountCreated;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    _setAccounts(accounts){
+        console.log('setAccounts on the store',accounts);
+        
+        this.setStoreState({
+            accounts: accounts
+        }).emit();
+    }
+    
+    getAccounts(){
+        return this.state.accounts;
+    }
 }
 export default new MyStore();

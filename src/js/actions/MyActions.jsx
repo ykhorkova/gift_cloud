@@ -1,46 +1,33 @@
 import Flux from '@4geeksacademy/react-flux-dash';
-import MyStore from '../stores/MyStore.js';
+import MyStore from '../stores/MyStore.jsx';
 
 class UserActions extends Flux.Action{
     
     constructor(){
         super();
-        // this.host = 'https://python-contact-list-ykhorkova.c9users.io';
+        this.host = 'https://phyton-giftcloud-yelic29.c9users.io';
     }
     
-    getContacts(){
-        fetch(this.host+'/signup/')
-            .then((resp) => {
-                return resp.json();
+    createAccount(incomingAccount){
+        fetch('https://phyton-giftcloud-yelic29.c9users.io/profile/', {
+                method: 'PUT',
+                body: JSON.stringify(incomingAccount),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+            .then(response => {
+                console.log('Add an account action!');
+                    // let account = MyStore.getAccounts();
+                    // account.push(response);
+                    this.dispatch('MyStore.setAccountCreated',true);
+                // return true;
             })
-            .then((contacts) => {
-                this.dispatch('MyStore.setContacts',contacts);
-            }) 
-            .catch((error) => {
-            console.log("There was an error ", error);
-        });
+            .catch(error => {
+                console.error('Error:', error);
+                this.dispatch('MyStore.setAccountCreated',false);
+            });
     }
-    
-    // addContact(incomingContact){
-    //     incomingContact.agenda_slug="Yuliia";
-    //     fetch(this.host+'/contact/', {
-    //         method: 'PUT',
-    //         body: JSON.stringify(incomingContact),
-    //         headers:{ 
-    //             'Accept':  'application/json',
-    //             'Content-Type': 'application/json'
-    //         }
-    //         }).then(res => res.json())
-    //         .then(response => {
-    //             console.log('Add contact action!');
-    //                 let contacts = MyStore.getContacts();
-    //                 contacts.push(response);
-    //                 this.dispatch('MyStore.setContacts',contacts);
-    //                 console.log('Success:', response);
-    //                 console.log(MyStore.getContacts());
-    //         })
-    //         .catch(error => console.error('Error:', error));
-    // }
     
     
     // deleteContact(id){

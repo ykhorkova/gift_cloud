@@ -7,7 +7,7 @@ import CardComponent from '../components/CardComponent.jsx';
 import Events from '../components/Events.jsx';
 import FilterComponent from '../components/FilterComponent.jsx';
 import PagesCount from '../components/PagesCount.jsx';
-import Calendar from '../components/Calendar.jsx';
+import AddGiftCompBtn from '../components/AddGiftCompBtn.jsx';
 
 export default class AccountGiftBody extends React.Component{
     render(){
@@ -23,6 +23,7 @@ export default class AccountGiftBody extends React.Component{
                                 <PagesCount className="PagesCount" />
                             </div>
                         </div>
+                        <AddGiftCompBtn />
                         <CardComponent />
                     </div>
                     <div className="col-4 sidebar-account-view">
