@@ -11,3 +11,55 @@
 }
 
 }
+
+.add-gift-comp-btn{
+  
+  
+  $text-color: #a6a4a2;
+  $purple: #A993CB;
+  $dark-gray: #6c6763;
+  
+  width: 150px;
+  height: 150px;
+  background-color: $text-color;
+  border-radius: 2%;
+  
+  .btn-round{
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 50px;
+  }
+  
+  .btn-plus-icon{
+    
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 42px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color: ghostWhite;
+    text-align: center;
+    text-decoration: none;
+    background: $text-color;
+    box-shadow: 0 0 3px gray;
+    font-size: 20px;
+    font-weight: bold;
+    
+  }
+  
+// .round-button:hover {
+//     background: #262626;
+// }
+  .add-a-gift{
+    color: ghostWhite;
+    font-size: 16px;
+    padding-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+  }
+  
+  
+}
+
+

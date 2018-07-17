@@ -76,12 +76,12 @@ export default class EmailSignUp extends Flux.View {
                                 MyActions.createAccount(createdAccount);
                             }
                                 }
-                            type="button" value="Create Account"/>
+                            type="button" className="create-account-btn" value="Create Account"/>
                         </form>
                     </div>    
                 ): (
                     <div className="acount-created">
-                        <h2> Account was created successfully!</h2>
+                        <h2 className="account-create-success"> Account was created successfully!</h2>
                         <Link to="/login" className="login-btn">Log In</Link>
                     </div>    
                 )
