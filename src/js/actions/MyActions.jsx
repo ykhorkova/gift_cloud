@@ -29,6 +29,9 @@ class UserActions extends Flux.Action{
             });
     }
     
+    // showDiv() {
+    //     document.getElementById('add-gift-form').style.display = "block";
+    // }
     
     // deleteContact(id){
     //     fetch(this.host+'/contact/'+id, {

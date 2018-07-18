@@ -3,7 +3,63 @@
     $purple: #A993CB;
     $dark-gray: #6c6763;
     
+    background-size: cover;
     font: 13px/23px 'Raleway', sans-serif;
+    color: $text-color;
+    padding: 40px 0;
     
     
+.container{   
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    width: 500px;
+    background: white;
+    border-radius: 10%;
+    border: 5px solid rgba(245,245,245, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}    
+ 
+.add-a-gift-header-title, .header-add-gift-title{ 
+    color: $purple;
+    margin-right: 5px;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.url-tab, .create-gift-tab{
+    color: $dark-gray;
+    font-weight: bold;
+}
+.required{
+    color: $text-color;
+    font: 12px;
+}
+.add-a-url, .add-gift-name{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+label, .add-a-url, .add-gift-name{
+    color: $dark-gray;
+}
+.url-input, .gift-name-input, .gift-name-input,
+.link-input, .price-input, .qty-input, .gift-details-input{
+    border-style: none;
+    width: 460px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 7px;
+    color: $text-color;
+}
+
+
+
+
+
+
+
+
 }

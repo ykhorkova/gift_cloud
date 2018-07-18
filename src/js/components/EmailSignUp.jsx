@@ -82,7 +82,7 @@ export default class EmailSignUp extends Flux.View {
                 ): (
                     <div className="acount-created">
                         <h2 className="account-create-success"> Account was created successfully!</h2>
-                        <Link to="/login" className="login-btn">Log In</Link>
+                        <Link to="/login" className="login">Log In</Link>
                     </div>    
                 )
                     
