@@ -50,6 +50,9 @@ class UserActions extends Flux.Action{
             .catch(error => console.error('Error:', error));
     }
     
+    // showDiv() {
+    //     document.getElementById('add-gift-form').style.display = "block";
+    // }
     
     // deleteContact(id){
     //     fetch(this.host+'/contact/'+id, {
