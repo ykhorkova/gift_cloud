@@ -11,7 +11,12 @@ export default class AddGiftModal extends React.Component{
         this.state = {
         addAGift: true,    
         createAGift: false,
-        urlForm: false
+        urlForm: false,
+        gift_name: "",
+        link_url: "",
+        price: "",
+        quantity: "",
+        gift_details: ""
         };    
     }
     
@@ -30,7 +35,7 @@ export default class AddGiftModal extends React.Component{
     }
     
     
-    
+    // <button type="button" className="btn btn-primary" onClick={() => this.props.onCancel()}>Oh no!</button>
     
     
     
@@ -56,7 +61,7 @@ export default class AddGiftModal extends React.Component{
                                 <h3 className="add-a-url">Paste a Link from Anywhere on the Web <span className="required">Required</span></h3>
                                 <input className="url-input" placeholder="https://"></input>
                                 <footer className="buttons-cancel-next">
-                                    <button className="cancel-btn">Cancel</button>
+                                    <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
                                     <button className="next-btn" onClick={(e) => this.switchUrlForms()}>Next</button>
                                 </footer>
                             </div>
@@ -64,10 +69,10 @@ export default class AddGiftModal extends React.Component{
                         <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="create-gift-tab">
                             <div className="add-gift-tab-content">
                                 <h3 className="add-gift-name">Give Your Gift a Name</h3> <span className="required">Required</span>
-                                <input className="gift-name-input" placeholder="Tickets to a Music Festival"></input>
+                                <input className="gift-name-input" placeholder="Tickets to a Music Festival" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name}></input>
                                 <footer className="buttons-cancel-next">
-                                    <button className="cancel-btn">Cancel</button>
-                                    <button className="next-btn" onClick={(e) => this.switchForms()}>Next</button>
+                                    <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
+                                    <button className={"next-btn" + this.state.gift_name.length > 3 ? '' : ' disabled'} disabled={this.state.gift_name.length > 3 ? undefined : 'disabled'} onClick={(e) => this.switchForms()}>Next</button>
                                 </footer>
                             </div>    
                         </div>
@@ -84,15 +89,15 @@ export default class AddGiftModal extends React.Component{
                         </div>
                         <form>
                             <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
-                            <input type="text" className="gift-name-input" id="giftNameInput" placeholder="Tickets to a Music Festival"></input>
+                            <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
                             <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
-                            <input type="url" className="link-input" id="linkInput" placeholder="https://www.tickets.com"></input>
+                            <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>
                             <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
-                            <input type="text" className="price-input" placeholder="USD" id="priceInput"></input>
+                            <input type="text" className="price-input" placeholder="USD" id="priceInput" onChange={(e) => this.setState({ price: e.target.value})} value={this.state.price}></input>
                             <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
-                            <input type="number" className="qty-input" id="qtyInput"></input>
+                            <input type="number" className="qty-input" id="qtyInput" onChange={(e) => this.setState({ quantity: e.target.value})} value={this.state.quantity}></input>
                             <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
-                            <input type="text" className="gift-details-input" id="giftDetailsInput"></input>
+                            <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
                         </form>
                         <div className="content-media">
                             <div className="content-media__image">
@@ -101,8 +106,21 @@ export default class AddGiftModal extends React.Component{
                             </div>
                         </div>
                         <footer className="buttons-cancel-next">
-                            <button className="cancel-btn">Cancel</button>
-                            <button className="next-btn">Save</button>
+                            <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
+                            <button className="save-btn"
+                            onClick={() => {
+                                let createdGift = {
+                                    gift_name: this.state.gift_name,
+                                    link_url: this.state.link_url,
+                                    price: this.state.price,
+                                    quantity: this.state.quantity,
+                                    gift_details: this.state.gift_details
+                                };
+                                this.setState({ buttonClicked: true});
+                                MyActions.cteateGift(createdGift);
+                            }
+                                }
+                            >Save</button>
                         </footer>
                     </div>
                 </div>;
@@ -133,7 +151,7 @@ export default class AddGiftModal extends React.Component{
                             </div>
                         </div>
                         <footer className="buttons-cancel-next">
-                            <button className="cancel-btn">Cancel</button>
+                            <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
                             <button className="next-btn">Save</button>
                         </footer>
                     </div>
