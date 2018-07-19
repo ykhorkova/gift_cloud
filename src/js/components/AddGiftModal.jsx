@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo2 from '../../img/logo2.png';
 import MyActions from "../actions/MyActions.jsx";
 
+
 export default class AddGiftModal extends React.Component{
      constructor(){
         super();
@@ -16,7 +17,10 @@ export default class AddGiftModal extends React.Component{
         link_url: "",
         price: "",
         quantity: "",
-        gift_details: ""
+        gift_details: "",
+        store_name: "",
+        // private_publicity: "",
+        // public_publicity: ""
         };    
     }
     
@@ -28,28 +32,29 @@ export default class AddGiftModal extends React.Component{
     }
     
     switchUrlForms(){
-        this.setState({ 
-            addAGift: false,
-            urlForm: true,
-        });
+            this.setState({ 
+                addAGift: false,
+                urlForm: true,
+                // gift_name: data.title
+            });
     }
     
-    
-    // <button type="button" className="btn btn-primary" onClick={() => this.props.onCancel()}>Oh no!</button>
-    
-    
+        // scraper.init(this.state.link_url, function(data){
+        //     console.log(data);
+        // });
+
     
     render(){
         var firstForm = "";
         if (this.state.addAGift == true){
             firstForm =
-                <div className="container">
+                <div className="container first-form-container">
                     <div className="add-a-gift-header">
                         <h2 className="add-a-gift-header-title"> Add a Gift </h2>
                     </div>   
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item">
-                            <a className="nav-link url-tab" data-toggle="tab" href="#home" role="tab" aria-controls="url-tab" aria-selected="true">Copy/Paste URL</a>
+                            <a className="nav-link url-tab active" data-toggle="tab" href="#home" role="tab" aria-controls="url-tab" aria-selected="true">Copy/Paste URL</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link create-gift-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="create-gift-tab" aria-selected="false">Create a Gift</a>
@@ -60,6 +65,19 @@ export default class AddGiftModal extends React.Component{
                             <div className="url-tab-content">
                                 <h3 className="add-a-url">Paste a Link from Anywhere on the Web <span className="required">Required</span></h3>
                                 <input className="url-input" placeholder="https://"></input>
+                                
+                                <div className="privacy-form">
+                                    <div className="privacy-title">
+                                        <h2 className="input-label">Who Can See this Wish List?<span className="required">Required</span></h2>
+                                    </div>
+                                    <div className="public-btn-content">
+                                        <button className="public-btn"><i className="fas fa-globe"></i>Public</button><span className="required"> Anyone online</span>
+                                    </div>
+                                    <div className="private-btn-content">
+                                        <button className="private-btn"><i className="fas fa-user-lock"></i>Private</button><span className="required">Only those with a link to wish list</span>
+                                    </div>
+                                </div>
+                               
                                 <footer className="buttons-cancel-next">
                                     <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
                                     <button className="next-btn" onClick={(e) => this.switchUrlForms()}>Next</button>
@@ -70,8 +88,19 @@ export default class AddGiftModal extends React.Component{
                             <div className="add-gift-tab-content">
                                 <h3 className="add-gift-name">Give Your Gift a Name</h3> <span className="required">Required</span>
                                 <input className="gift-name-input" placeholder="Tickets to a Music Festival" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name}></input>
+                                <div className="privacy-form">
+                                    <div className="privacy-title">
+                                        <h2 className="input-label">Who Can See this Wish List?<span className="required">Required</span></h2>
+                                    </div>
+                                    <div className="public-btn-content">
+                                        <button className="public-btn"><i className="fas fa-globe"></i>Public</button><span className="required"> Anyone online</span>
+                                    </div>
+                                    <div className="private-btn-content">
+                                        <button className="private-btn"><i className="fas fa-user-lock"></i>Private</button><span className="required">Only those with a link to wish list</span>
+                                    </div>
+                                </div>
                                 <footer className="buttons-cancel-next">
-                                    <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
+                                    <button href="#account" type="button" className="cancel-btn">Cancel</button>
                                     <button className={"next-btn" + this.state.gift_name.length > 3 ? '' : ' disabled'} disabled={this.state.gift_name.length > 3 ? undefined : 'disabled'} onClick={(e) => this.switchForms()}>Next</button>
                                 </footer>
                             </div>    
@@ -98,6 +127,7 @@ export default class AddGiftModal extends React.Component{
                             <input type="number" className="qty-input" id="qtyInput" onChange={(e) => this.setState({ quantity: e.target.value})} value={this.state.quantity}></input>
                             <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
                             <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
+                            
                         </form>
                         <div className="content-media">
                             <div className="content-media__image">
@@ -117,7 +147,7 @@ export default class AddGiftModal extends React.Component{
                                     gift_details: this.state.gift_details
                                 };
                                 this.setState({ buttonClicked: true});
-                                MyActions.cteateGift(createdGift);
+                                MyActions.createGift(createdGift);
                             }
                                 }
                             >Save</button>
@@ -159,9 +189,7 @@ export default class AddGiftModal extends React.Component{
         }    
         
         
-        
-        
-        
+
         return(<div className="add-gift-modal">
             {firstForm}
             {createAGiftForm}

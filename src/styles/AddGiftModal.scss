@@ -14,19 +14,52 @@
     margin-bottom: 50px;
     margin: 0 auto;
     width: 500px;
+    height: 550px;
     background: white;
     border-radius: 10%;
     border: 5px solid rgba(245,245,245, 0.5);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
 }    
- 
+// .first-form-container{
+//     margin-top: 50px;
+//     margin-bottom: 50px;
+//     margin: 0 auto;
+//     width: 500px;
+//     height: 350px;
+//     background: white;
+//     border-radius: 10%;
+//     border: 5px solid rgba(245,245,245, 0.5);
+//     -webkit-background-clip: padding-box;
+//     background-clip: padding-box;
+// }
 .add-a-gift-header-title, .header-add-gift-title{ 
     color: $purple;
     margin-right: 5px;
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.input-label{
+    padding-bottom: 7px;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.private-btn-content, .public-btn-content{
+    padding-bottom: 7px;
+}
+
+.public-btn, .private-btn{
+    width: 120px;
+    border-radius: 5%;
+    background-color: ghostWhite;
+    
+    i {
+        padding-right: 5px;
+        color: $purple;
+    }
 }
 
 .url-tab, .create-gift-tab{
@@ -36,6 +69,7 @@
 .required{
     color: $text-color;
     font: 12px;
+    padding-left: 5px;
 }
 .add-a-url, .add-gift-name{
     padding-top: 10px;
@@ -43,7 +77,7 @@
     font-size: 13px;
 }
 
-label, .add-a-url, .add-gift-name{
+label, .add-a-url, .add-gift-name, .input-label{
     color: $dark-gray;
 }
 .url-input, .gift-name-input, .gift-name-input,
@@ -53,13 +87,44 @@ label, .add-a-url, .add-gift-name{
     border-bottom: 1px solid #dee2e6;
     padding-bottom: 7px;
     color: $text-color;
+    
+    // outline: none;
+    // display: block;
+    // width: 100%;
+    // border: 1px solid #d9d9d9;
+    // border: none;
+    // border-radius: 3px;
+    // background: #f7f6f5;
+    // margin: 5px auto;
+    // padding: 5px;
+    
 }
 
+.buttons-cancel-next{
+    float: right;
+}
 
+.cancel-btn{
+    color: white;
+    font-size: 15px;
+    background:  red;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 70px;
+    border-radius: 7%;
+}
 
-
-
-
+footer{
+    button{
+    color: white;
+    font-size: 15px;
+    background: linear-gradient(#af96d4, #9b88b9);
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 70px;
+    border-radius: 7%;
+    }
+}
 
 
 }

@@ -18,10 +18,7 @@ class UserActions extends Flux.Action{
             }).then(res => res.json())
             .then(response => {
                 console.log('Add an account action!');
-                    // let account = MyStore.getAccounts();
-                    // account.push(response);
                     this.dispatch('MyStore.setAccountCreated',true);
-                // return true;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -29,24 +26,24 @@ class UserActions extends Flux.Action{
             });
     }
    
-    editAccount(idProfile){
-        fetch('https://phyton-giftcloud-yelic29.c9users.io/editprofile/'+idProfile, {
-            method: 'POST'})
-            .then(res => res.json())
-            .then(response => {
-                account = account.forEach((myaccount) => {
-                    if (myaccount.id == idProfile.id) {
-                        myaccount.name == idProfile.first_name;
-                        myaccount.lastname == idProfile.last_name;
-                        myaccount.birthdate == idProfile.birthdate;
-                        myaccount.password == idProfile.password;
-                        myaccount.email == idProfile.email;
-                    }
-                });
-                this.dispatch('MyStore.setAccount',account);
-            })
-            .catch(error => console.error('Error:', error));
-    }
+    // editAccount(idProfile){
+    //     fetch('https://phyton-giftcloud-yelic29.c9users.io/editprofile/'+idProfile, {
+    //         method: 'POST'})
+    //         .then(res => res.json())
+    //         .then(response => {
+    //             account = account.forEach((myaccount) => {
+    //                 if (myaccount.id == idProfile.id) {
+    //                     myaccount.name == idProfile.first_name;
+    //                     myaccount.lastname == idProfile.last_name;
+    //                     myaccount.birthdate == idProfile.birthdate;
+    //                     myaccount.password == idProfile.password;
+    //                     myaccount.email == idProfile.email;
+    //                 }
+    //             });
+    //             this.dispatch('MyStore.setAccount',account);
+    //         })
+    //         .catch(error => console.error('Error:', error));
+    // }
     
     createGift(incomingGift){
         fetch('https://phyton-giftcloud-yelic29.c9users.io/gift/', {
@@ -66,24 +63,24 @@ class UserActions extends Flux.Action{
             });
     }
     
-    editGift(idGift){
-        fetch('https://phyton-giftcloud-yelic29.c9users.io/editgift/'+idGift, {
-            method: 'POST'})
-            .then(res => res.json())
-            .then(response => {
-                giftcloud = giftcloud.forEach((mygift) => {
-                    if (mygift.id == idGift.id) {
-                        mygift.store_name == idGift.store_name;
-                        mygift.title == idGift.title;
-                        mygift.price == idGift.price;
-                        mygift.gift_choices == idGift.gift_choices;
-                        mygift.priority_choices == idGift.priority_choices;
-                    }
-                });
-                this.dispatch('MyStore.setGift',giftcloud);
-            })
-            .catch(error => console.error('Error:', error));
-    }
+    // editGift(idGift){
+    //     fetch('https://phyton-giftcloud-yelic29.c9users.io/editgift/'+idGift, {
+    //         method: 'POST'})
+    //         .then(res => res.json())
+    //         .then(response => {
+    //             giftcloud = giftcloud.forEach((mygift) => {
+    //                 if (mygift.id == idGift.id) {
+    //                     mygift.store_name == idGift.store_name;
+    //                     mygift.title == idGift.title;
+    //                     mygift.price == idGift.price;
+    //                     mygift.gift_choices == idGift.gift_choices;
+    //                     mygift.priority_choices == idGift.priority_choices;
+    //                 }
+    //             });
+    //             this.dispatch('MyStore.setGift',giftcloud);
+    //         })
+    //         .catch(error => console.error('Error:', error));
+    // }
 }
     
 export default new UserActions();
