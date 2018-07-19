@@ -30,19 +30,17 @@ class UserActions extends Flux.Action{
     }
    
     editAccount(idProfile){
-        let url = 'https://phyton-giftcloud-yelic29.c9users.io/sprofile/'+idProfile;
-        let account = MyStore.getAccount();
-        
-        fetch(url, {
+        fetch('https://phyton-giftcloud-yelic29.c9users.io/editprofile/'+idProfile, {
             method: 'POST'})
             .then(res => res.json())
             .then(response => {
                 account = account.forEach((myaccount) => {
                     if (myaccount.id == idProfile.id) {
-                        myaccount.name == idProfile.full_name;
+                        myaccount.name == idProfile.first_name;
+                        myaccount.lastname == idProfile.last_name;
+                        myaccount.birthdate == idProfile.birthdate;
+                        myaccount.password == idProfile.password;
                         myaccount.email == idProfile.email;
-                        myaccount.phone == idProfile.phone;
-                        myaccount.address == idProfile.address;
                     }
                 });
                 this.dispatch('MyStore.setAccount',account);
@@ -50,59 +48,42 @@ class UserActions extends Flux.Action{
             .catch(error => console.error('Error:', error));
     }
     
-    // showDiv() {
-    //     document.getElementById('add-gift-form').style.display = "block";
-    // }
+    createGift(incomingGift){
+        fetch('https://phyton-giftcloud-yelic29.c9users.io/gift/', {
+                method: 'PUT',
+                body: JSON.stringify(incomingGift),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+            .then(response => {
+                console.log('Add an gift action!');
+                    this.dispatch('MyStore.setGiftCreated',true);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                this.dispatch('MyStore.setGiftCreated',false);
+            });
+    }
     
-    // deleteContact(id){
-    //     fetch(this.host+'/contact/'+id, {
-    //         method: 'DELETE'
-    //         }).then(res => res.json())
-    //         .then(response => {
-    //             console.log('delete action!', id);
-    //             let contacts = MyStore.getContacts();
-                
-    //             let updatedContacts = contacts.filter((element, index) => {
-    //                 return element.id != id;
-    //             });
-    //             this.dispatch('MyStore.setContacts',updatedContacts);
-    //             console.log('Success:', response);
-    //             console.log(MyStore.updatedContacts);
-    //         })
-    //         .catch(error => console.error('Error:', error));
-    // }
-    
-    //  editContact(updatedContact){
-    //     console.log(updatedContact);
-    //     fetch(this.host+'/contact/'+updatedContact.id, {
-    //             method: 'POST',
-    //             body: JSON.stringify(updatedContact),
-    //             headers:{ 
-    //             'Accept':  'application/json',
-    //             'Content-Type': 'application/json'
-    //             }
-    //         }).then(res => {
-    //             return res.json();
-    //         })
-    //         .then(response => {
-    //             console.log('edit action!', updatedContact.id);
-    //             let contacts = MyStore.getContacts();
-
-    //             contacts.forEach((element) => {
-    //                 if (element.id === updatedContact.id) {
-    //                     element.email = updatedContact.email,
-    //                     element.full_name = updatedContact.full_name;
-    //                     element.phone = updatedContact.phone;
-    //                     element.address = updatedContact.address;
-    //                 }
-    //             });
-                        
-    //             this.dispatch('MyStore.setContacts',contacts);
-    //             console.log('Success:', response);
-    //             console.log(MyStore.updatedContacts);
-    //         })
-    //         .catch(error => console.error('Error:', error));
-    // }
+    editGift(idGift){
+        fetch('https://phyton-giftcloud-yelic29.c9users.io/editgift/'+idGift, {
+            method: 'POST'})
+            .then(res => res.json())
+            .then(response => {
+                giftcloud = giftcloud.forEach((mygift) => {
+                    if (mygift.id == idGift.id) {
+                        mygift.store_name == idGift.store_name;
+                        mygift.title == idGift.title;
+                        mygift.price == idGift.price;
+                        mygift.gift_choices == idGift.gift_choices;
+                        mygift.priority_choices == idGift.priority_choices;
+                    }
+                });
+                this.dispatch('MyStore.setGift',giftcloud);
+            })
+            .catch(error => console.error('Error:', error));
+    }
 }
     
 export default new UserActions();
