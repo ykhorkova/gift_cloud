@@ -44,6 +44,22 @@ class UserActions extends Flux.Action{
     //         })
     //         .catch(error => console.error('Error:', error));
     // }
+    getGift(){
+       fetch('https://phyton-giftcloud-yelic29.c9users.io/account/')
+           .then((resp) => {
+               return resp.json();
+           })
+           .then((gifts) => {
+               this.dispatch('MyStore.setGifts',gifts);
+           })
+           .catch((error) => {
+               console.log("There was an error ", error);
+       });
+   }
+    
+    
+    
+    
     
     createGift(incomingGift){
         fetch('https://phyton-giftcloud-yelic29.c9users.io/gift/', {

@@ -39,6 +39,10 @@ export default class AddGiftModal extends React.Component{
             });
     }
     
+    storeGiftCard(){
+        
+    }
+    
         // scraper.init(this.state.link_url, function(data){
         //     console.log(data);
         // });
@@ -137,8 +141,7 @@ export default class AddGiftModal extends React.Component{
                         </div>
                         <footer className="buttons-cancel-next">
                             <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
-                            <button className="save-btn"
-                            onClick={() => {
+                            <button onClick={() => {
                                 let createdGift = {
                                     gift_name: this.state.gift_name,
                                     link_url: this.state.link_url,
@@ -150,7 +153,7 @@ export default class AddGiftModal extends React.Component{
                                 MyActions.createGift(createdGift);
                             }
                                 }
-                            >Save</button>
+                            className="save-btn">Save</button>
                         </footer>
                     </div>
                 </div>;

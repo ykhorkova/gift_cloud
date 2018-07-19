@@ -29,8 +29,6 @@ class MyStore extends Flux.Store{
     
     
     
-    
-    
     _setAccounts(accounts){
         console.log('setAccounts on the store',accounts);
         
