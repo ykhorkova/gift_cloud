@@ -28,6 +28,27 @@ class UserActions extends Flux.Action{
                 this.dispatch('MyStore.setAccountCreated',false);
             });
     }
+   
+    editAccount(idProfile){
+        let url = 'https://phyton-giftcloud-yelic29.c9users.io/sprofile/'+idProfile;
+        let account = MyStore.getAccount();
+        
+        fetch(url, {
+            method: 'POST'})
+            .then(res => res.json())
+            .then(response => {
+                account = account.forEach((myaccount) => {
+                    if (myaccount.id == idProfile.id) {
+                        myaccount.name == idProfile.full_name;
+                        myaccount.email == idProfile.email;
+                        myaccount.phone == idProfile.phone;
+                        myaccount.address == idProfile.address;
+                    }
+                });
+                this.dispatch('MyStore.setAccount',account);
+            })
+            .catch(error => console.error('Error:', error));
+    }
     
     
     // deleteContact(id){
