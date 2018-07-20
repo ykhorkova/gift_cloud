@@ -9,7 +9,7 @@ class UserActions extends Flux.Action{
     }
     
     createAccount(incomingAccount){
-        fetch('https://phyton-giftcloud-yelic29.c9users.io/profile/', {
+        fetch(this.host+'/profile/', {
                 method: 'PUT',
                 body: JSON.stringify(incomingAccount),
                 headers:{
@@ -30,11 +30,13 @@ class UserActions extends Flux.Action{
     }
    
     editAccount(idProfile){
-        fetch('https://phyton-giftcloud-yelic29.c9users.io/editprofile/'+idProfile, {
+        let accounts = MyStore.getAccounts();
+        
+        fetch(this.host+'/editprofile/'+idProfile, {
             method: 'POST'})
             .then(res => res.json())
             .then(response => {
-                account = account.forEach((myaccount) => {
+                accounts = accounts.forEach((myaccount) => {
                     if (myaccount.id == idProfile.id) {
                         myaccount.name == idProfile.first_name;
                         myaccount.lastname == idProfile.last_name;
@@ -43,13 +45,13 @@ class UserActions extends Flux.Action{
                         myaccount.email == idProfile.email;
                     }
                 });
-                this.dispatch('MyStore.setAccount',account);
+                this.dispatch('MyStore.setAccount',accounts);
             })
             .catch(error => console.error('Error:', error));
     }
     
     createGift(incomingGift){
-        fetch('https://phyton-giftcloud-yelic29.c9users.io/gift/', {
+        fetch(this.host+'/gift/', {
                 method: 'PUT',
                 body: JSON.stringify(incomingGift),
                 headers:{
@@ -67,11 +69,13 @@ class UserActions extends Flux.Action{
     }
     
     editGift(idGift){
-        fetch('https://phyton-giftcloud-yelic29.c9users.io/editgift/'+idGift, {
+        let gifts = MyStore.getGifts();
+        
+        fetch(this.host+'/editgift/'+idGift, {
             method: 'POST'})
             .then(res => res.json())
             .then(response => {
-                giftcloud = giftcloud.forEach((mygift) => {
+                gifts = gifts.forEach((mygift) => {
                     if (mygift.id == idGift.id) {
                         mygift.store_name == idGift.store_name;
                         mygift.title == idGift.title;
@@ -80,7 +84,7 @@ class UserActions extends Flux.Action{
                         mygift.priority_choices == idGift.priority_choices;
                     }
                 });
-                this.dispatch('MyStore.setGift',giftcloud);
+                this.dispatch('MyStore.setGift',gifts);
             })
             .catch(error => console.error('Error:', error));
     }
