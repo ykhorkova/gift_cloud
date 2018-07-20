@@ -34,16 +34,5 @@ class MyStore extends Flux.Store{
         return this.state.accounts;
     }
     
-    _setGifts(gifts){
-        console.log('setAccounts on the store',gifts);
-        
-        this.setStoreState({
-            gifts: gifts
-        }).emit();
-    }
-    
-    getGifts(){
-        return this.state.gifts;
-    }
-}
+ }
 export default new MyStore();

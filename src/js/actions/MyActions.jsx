@@ -68,26 +68,26 @@ class UserActions extends Flux.Action{
             });
     }
     
-    editGift(idGift){
-        let gifts = MyStore.getGifts();
-        
-        fetch(this.host+'/editgift/'+idGift, {
-            method: 'POST'})
-            .then(res => res.json())
-            .then(response => {
-                gifts = gifts.forEach((mygift) => {
-                    if (mygift.id == idGift.id) {
-                        mygift.store_name == idGift.store_name;
-                        mygift.title == idGift.title;
-                        mygift.price == idGift.price;
-                        mygift.gift_choices == idGift.gift_choices;
-                        mygift.priority_choices == idGift.priority_choices;
-                    }
-                });
-                this.dispatch('MyStore.setGift',gifts);
-            })
-            .catch(error => console.error('Error:', error));
-    }
+    //editGift(idGift){
+    //    let gifts = MyStore.getGifts();
+    //    
+    //    fetch(this.host+'/editgift/'+idGift, {
+    //        method: 'POST'})
+    //        .then(res => res.json())
+    //        .then(response => {
+    //            gifts = gifts.forEach((mygift) => {
+    //                if (mygift.id == idGift.id) {
+    //                    mygift.store_name == idGift.store_name;
+    //                    mygift.title == idGift.title;
+    //                    mygift.price == idGift.price;
+    //                    mygift.gift_choices == idGift.gift_choices;
+    //                    mygift.priority_choices == idGift.priority_choices;
+    //                }
+    //            });
+    //            this.dispatch('MyStore.setGift',gifts);
+    //        })
+    //        .catch(error => console.error('Error:', error));
+    //}
 }
     
 export default new UserActions();

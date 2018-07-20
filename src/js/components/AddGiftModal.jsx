@@ -39,15 +39,7 @@ export default class AddGiftModal extends React.Component{
             });
     }
     
-    storeGiftCard(){
-        
-    }
-    
-        // scraper.init(this.state.link_url, function(data){
-        //     console.log(data);
-        // });
 
-    
     render(){
         var firstForm = "";
         if (this.state.addAGift == true){
@@ -83,14 +75,14 @@ export default class AddGiftModal extends React.Component{
                                 </div>
                                
                                 <footer className="buttons-cancel-next">
-                                    <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
+                                    <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
                                     <button className="next-btn" onClick={(e) => this.switchUrlForms()}>Next</button>
                                 </footer>
                             </div>
                         </div>
                         <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="create-gift-tab">
                             <div className="add-gift-tab-content">
-                                <h3 className="add-gift-name">Give Your Gift a Name</h3> <span className="required">Required</span>
+                                <h3 className="add-gift-name">Give Your Gift a Name<span className="required">Required</span></h3>
                                 <input className="gift-name-input" placeholder="Tickets to a Music Festival" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name}></input>
                                 <div className="privacy-form">
                                     <div className="privacy-title">
@@ -104,6 +96,7 @@ export default class AddGiftModal extends React.Component{
                                     </div>
                                 </div>
                                 <footer className="buttons-cancel-next">
+
                                     <button href="#account" type="button" className="cancel-btn">Cancel</button>
                                     <button className={"next-btn" + this.state.gift_name.length > 3 ? '' : ' disabled'} disabled={this.state.gift_name.length > 3 ? undefined : 'disabled'} onClick={(e) => this.switchForms()}>Next</button>
                                 </footer>
@@ -120,6 +113,7 @@ export default class AddGiftModal extends React.Component{
                         <div className="header-add-gift-form">
                             <h2 className="header-add-gift-title">Please Confirm the Following Details</h2>
                         </div>
+
                         <form>
                             <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
                             <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
@@ -134,13 +128,39 @@ export default class AddGiftModal extends React.Component{
                             
                         </form>
                         <div className="content-media">
+
+
+                        <div className="row">
+                            <form className="column">
+                                <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
+                                <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
+                                <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
+                                <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>
+                                <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
+                                <input type="text" className="price-input" placeholder="USD" id="priceInput" onChange={(e) => this.setState({ price: e.target.value})} value={this.state.price}></input>
+                                <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
+                                <input type="number" className="qty-input" id="qtyInput" onChange={(e) => this.setState({ quantity: e.target.value})} value={this.state.quantity}></input>
+                                <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
+                                <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
+                                
+                            </form>
+                        </div>
+                        <div className="content-media column">
+
+
                             <div className="content-media__image">
                                 <img src={logo2} width="250" height="190"></img>
                                 <button className="btn-link content-media__upload-button">Upload a Photo</button>
                             </div>
                         </div>
                         <footer className="buttons-cancel-next">
+
                             <Link to="/account" type="button" className="cancel-btn">Cancel</Link>
+
+
+                            <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
+
+
                             <button onClick={() => {
                                 let createdGift = {
                                     gift_name: this.state.gift_name,
@@ -156,11 +176,10 @@ export default class AddGiftModal extends React.Component{
                             className="save-btn">Save</button>
                         </footer>
                     </div>
-                </div>;
+                </div>);
         }    
         
-        var showUrlForm = "";
-        if (this.state.urlForm == true){
+    {
             showUrlForm =
                 <div className="add-gift-form link-form" id="add-gift-form link-form">
                     <div className="container">
@@ -188,7 +207,7 @@ export default class AddGiftModal extends React.Component{
                             <button className="next-btn">Save</button>
                         </footer>
                     </div>
-                </div>;
+                </div>
         }    
         
         
@@ -197,7 +216,7 @@ export default class AddGiftModal extends React.Component{
             {firstForm}
             {createAGiftForm}
             {showUrlForm}
-        </div>
-                    );
+        </div>);
+
    }
 }
