@@ -24,6 +24,7 @@ export default class CardComponent extends React.Component{
                     <div className="card-footer row">
                         <div className="column">
                             <p className="date-added">June 2018</p>
+                            <span className="publicity"><i className="fas fa-globe"></i></span>
                         </div>
                         <div className="column">
                             <button type="button" className="more">...</button>

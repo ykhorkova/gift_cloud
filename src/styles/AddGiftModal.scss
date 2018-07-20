@@ -7,38 +7,60 @@
     font: 13px/23px 'Raleway', sans-serif;
     color: $text-color;
     padding: 40px 0;
-    
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
     
 .container{   
     margin-top: 50px;
     margin-bottom: 50px;
-    margin: 0 auto;
-    width: 500px;
-    height: 550px;
+    margin: auto;
+    width: 550px;
+    height: 400px;
     background: white;
     border-radius: 10%;
     border: 5px solid rgba(245,245,245, 0.5);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-}    
-// .first-form-container{
-//     margin-top: 50px;
-//     margin-bottom: 50px;
-//     margin: 0 auto;
-//     width: 500px;
-//     height: 350px;
-//     background: white;
-//     border-radius: 10%;
-//     border: 5px solid rgba(245,245,245, 0.5);
-//     -webkit-background-clip: padding-box;
-//     background-clip: padding-box;
-// }
+} 
+
+.first-form-container{
+    height: 350px!important;
+}
+
+form.column{
+    padding-left: 20px;
+}
+
+.column {
+    padding-left: 20px;
+    float: left;
+    width: 50%;
+}
+
+div.content-media .column{
+    text-align: center;
+}
+
+div.content-media__image{
+
+    text-align: center;
+}
 .add-a-gift-header-title, .header-add-gift-title{ 
     color: $purple;
     margin-right: 5px;
     font-size: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .input-label{
@@ -83,28 +105,21 @@ label, .add-a-url, .add-gift-name, .input-label{
 .url-input, .gift-name-input, .gift-name-input,
 .link-input, .price-input, .qty-input, .gift-details-input{
     border-style: none;
-    width: 460px;
+    width: 100%;
     border-bottom: 1px solid #dee2e6;
-    padding-bottom: 7px;
+    padding-bottom: 3px;
     color: $text-color;
-    
-    // outline: none;
-    // display: block;
-    // width: 100%;
-    // border: 1px solid #d9d9d9;
-    // border: none;
-    // border-radius: 3px;
-    // background: #f7f6f5;
-    // margin: 5px auto;
-    // padding: 5px;
     
 }
 
 .buttons-cancel-next{
     float: right;
 }
-
-.cancel-btn{
+footer.buttons-cancel-next{
+    padding-top: 20px;
+    padding-right: 15px;
+}
+.cancel-btn, link{
     color: white;
     font-size: 15px;
     background:  red;
@@ -112,6 +127,8 @@ label, .add-a-url, .add-gift-name, .input-label{
     text-transform: uppercase;
     width: 70px;
     border-radius: 7%;
+    text-align: center;
+    margin-right: 10px;
 }
 
 footer{
