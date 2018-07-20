@@ -39,14 +39,19 @@ export default class AddGiftModal extends React.Component{
             });
     }
     
+    saveChoise(choice){
+        console.log(choice);
+        this.setState({
+        ""    : choice
+            
+        });
+    }
+    
     // goBack(){
     //     this.setState({ 
     //     window.history.back()
     //     };
     // }
-
-
-
 
     // storeGiftCard(){
         
@@ -84,16 +89,16 @@ export default class AddGiftModal extends React.Component{
                                         <h2 className="input-label">Who Can See this Wish List?<span className="required">Required</span></h2>
                                     </div>
                                     <div className="public-btn-content">
-                                        <button className="public-btn"><i className="fas fa-globe"></i>Public</button><span className="required"> Anyone online</span>
+                                        <button className="public-btn" onClick={(e) => this.saveChoise("Public")}><i className="fas fa-globe"></i>Public</button><span className="required"> Anyone online</span>
                                     </div>
                                     <div className="private-btn-content">
-                                        <button className="private-btn"><i className="fas fa-user-lock"></i>Private</button><span className="required">Only those with a link to wish list</span>
+                                        <button className="private-btn" onClick={(e) => this.saveChoise("Private")}><i className="fas fa-user-lock"></i>Private</button><span className="required">Only those with a link to wish list</span>
                                     </div>
                                 </div>
                                
                                 <footer className="buttons-cancel-next">
                                     <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                                    <button className="next-btn" onClick={(e) => this.switchUrlForms()}>Next</button>
+                                    <button id="next-btn" className="next-btn" onClick={(e) => this.switchUrlForms()}>Next</button>
                                 </footer>
                             </div>
                         </div>
@@ -114,7 +119,7 @@ export default class AddGiftModal extends React.Component{
                                 </div>
                                 <footer className="buttons-cancel-next">
                                     <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                                    <button className={"next-btn" + this.state.gift_name.length > 3 ? '' : ' disabled'} disabled={this.state.gift_name.length > 3 ? undefined : 'disabled'} onClick={(e) => this.switchForms()}>Next</button>
+                                    <button id="next-btn" className={"next-btn" + this.state.gift_name.length > 3 ? '' : ' disabled'} disabled={this.state.gift_name.length > 3 ? undefined : 'disabled'} onClick={(e) => this.switchForms()}>Next</button>
                                 </footer>
                             </div>    
                         </div>
@@ -164,7 +169,7 @@ export default class AddGiftModal extends React.Component{
                                 MyActions.createGift(createdGift);
                             }
                                 }
-                            className="save-btn">Save</button>
+                            className="save-btn" id="next-btn">Save</button>
                         </footer>
                     </div>
                 </div>;
@@ -173,9 +178,9 @@ export default class AddGiftModal extends React.Component{
         var showUrlForm = "";
         if (this.state.urlForm == true){
             showUrlForm =
-                <div className="add-gift-form link-form" id="add-gift-form link-form">
+                <div className="add-gift-form" id="add-gift-form">
                     <div className="container">
-                        <div className="header-add-gift-form link">
+                        <div className="header-add-gift-form">
                             <h2 className="header-add-gift-title">Please Confirm the Following Details</h2>
                         </div>
                         <div className="row">
@@ -195,10 +200,10 @@ export default class AddGiftModal extends React.Component{
                                     <button className="btn-link content-media__upload-button">Upload a Photo</button>
                                 </div>
                             </div>
-                        </div>    
+                        </div>
                         <footer className="buttons-cancel-next">
                             <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                            <button className="next-btn">Save</button>
+                            <button id="next-btn" className="next-btn">Save</button>
                         </footer>
                     </div>
                 </div>;

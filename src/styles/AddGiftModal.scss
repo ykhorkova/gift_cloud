@@ -119,28 +119,26 @@ footer.buttons-cancel-next{
     padding-top: 20px;
     padding-right: 15px;
 }
-.cancel-btn, link{
+.cancel-btn, {
     color: white;
     font-size: 15px;
-    background:  red;
+    background: $text-color;
     cursor: pointer;
     text-transform: uppercase;
-    width: 70px;
+    width: 80px;
     border-radius: 7%;
     text-align: center;
     margin-right: 10px;
 }
 
-footer{
-    button{
+#next-btn{
     color: white;
     font-size: 15px;
     background: linear-gradient(#af96d4, #9b88b9);
     cursor: pointer;
     text-transform: uppercase;
-    width: 70px;
+    width: 80px;
     border-radius: 7%;
-    }
 }
 
 
