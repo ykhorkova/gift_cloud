@@ -19,8 +19,7 @@ export default class AddGiftModal extends React.Component{
         quantity: "",
         gift_details: "",
         store_name: "",
-        // private_publicity: "",
-        // public_publicity: ""
+        privacy: ""
         };    
     }
     
@@ -42,8 +41,7 @@ export default class AddGiftModal extends React.Component{
     saveChoise(choice){
         console.log(choice);
         this.setState({
-        ""    : choice
-            
+        privacy: choice
         });
     }
     
@@ -53,9 +51,6 @@ export default class AddGiftModal extends React.Component{
     //     };
     // }
 
-    // storeGiftCard(){
-        
-    // }
     
         // scraper.init(this.state.link_url, function(data){
         //     console.log(data);
@@ -111,10 +106,10 @@ export default class AddGiftModal extends React.Component{
                                         <h2 className="input-label">Who Can See this Wish List?<span className="required">Required</span></h2>
                                     </div>
                                     <div className="public-btn-content">
-                                        <button className="public-btn"><i className="fas fa-globe"></i>Public</button><span className="required"> Anyone online</span>
+                                        <button className="public-btn" onClick={(e) => this.saveChoise("Public")}><i className="fas fa-globe"></i>Public</button><span className="required"> Anyone online</span>
                                     </div>
                                     <div className="private-btn-content">
-                                        <button className="private-btn"><i className="fas fa-user-lock"></i>Private</button><span className="required">Only those with a link to wish list</span>
+                                        <button className="private-btn" onClick={(e) => this.saveChoise("Private")}><i className="fas fa-user-lock"></i>Private</button><span className="required">Only those with a link to wish list</span>
                                     </div>
                                 </div>
                                 <footer className="buttons-cancel-next">
@@ -129,83 +124,79 @@ export default class AddGiftModal extends React.Component{
         var createAGiftForm = "";
         if (this.state.createAGift == true){
             createAGiftForm =
-                <div className="add-gift-form" id="add-gift-form">
-                    <div className="container">
-                        <div className="header-add-gift-form">
-                            <h2 className="header-add-gift-title">Please Confirm the Following Details</h2>
-                        </div>
-                        <div className="row">
-                            <form className="column">
-                                <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
-                                <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
-                                <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
-                                <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>
-                                <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
-                                <input type="text" className="price-input" placeholder="USD" id="priceInput" onChange={(e) => this.setState({ price: e.target.value})} value={this.state.price}></input>
-                                <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
-                                <input type="number" className="qty-input" id="qtyInput" onChange={(e) => this.setState({ quantity: e.target.value})} value={this.state.quantity}></input>
-                                <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
-                                <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
-                                
-                            </form>
-                        </div>
-                        <div className="content-media column">
-                            <div className="content-media__image">
-                                <img src={logo2} width="250" height="190"></img>
-                                <button className="btn-link content-media__upload-button">Upload a Photo</button>
-                            </div>
-                        </div>
-                        <footer className="buttons-cancel-next">
-                            <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                            <button onClick={() => {
-                                let createdGift = {
-                                    gift_name: this.state.gift_name,
-                                    link_url: this.state.link_url,
-                                    price: this.state.price,
-                                    quantity: this.state.quantity,
-                                    gift_details: this.state.gift_details
-                                };
-                                this.setState({ buttonClicked: true});
-                                MyActions.createGift(createdGift);
-                            }
-                                }
-                            className="save-btn" id="next-btn">Save</button>
-                        </footer>
+                <div className="container add-gift-form" id="add-gift-form">
+                    <div className="header-add-gift-form">
+                        <h2 className="header-add-gift-title">Please Confirm the Following Details</h2>
                     </div>
+                    <div className="row">
+                        <form className="column">
+                            <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
+                            <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
+                            <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
+                            <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>
+                            <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
+                            <input type="text" className="price-input" placeholder="USD" id="priceInput" onChange={(e) => this.setState({ price: e.target.value})} value={this.state.price}></input>
+                            <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
+                            <input type="number" className="qty-input" id="qtyInput" onChange={(e) => this.setState({ quantity: e.target.value})} value={this.state.quantity}></input>
+                            <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
+                            <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
+                        </form>
+                    </div>
+                    <div className="content-media column">
+                        <div className="content-media__image">
+                            <img src={logo2} width="250" height="190"></img>
+                            <button className="btn-link content-media__upload-button">Upload a Photo</button>
+                        </div>
+                    </div>
+                    <footer className="buttons-cancel-next">
+                        <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
+                        <button onClick={() => {
+                            let createdGift = {
+                                gift_name: this.state.gift_name,
+                                link_url: this.state.link_url,
+                                price: this.state.price,
+                                quantity: this.state.quantity,
+                                privacy: this.state.privacy,
+                                gift_details: this.state.gift_details
+                            };
+                            this.setState({ buttonClicked: true});
+                            MyActions.createGift(createdGift);
+                        }
+                            }
+                        className="save-btn" id="next-btn">Save</button>
+                    </footer>
                 </div>;
         }    
         
         var showUrlForm = "";
         if (this.state.urlForm == true){
             showUrlForm =
-                <div className="add-gift-form" id="add-gift-form">
-                    <div className="container">
-                        <div className="header-add-gift-form">
-                            <h2 className="header-add-gift-title">Please Confirm the Following Details</h2>
-                        </div>
-                        <div className="row">
-                            <form className="column">
-                                <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
-                                <input type="text" className="gift-name-input" id="giftNameInput" placeholder="Tickets to a Music Festival"></input>
-                                <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
-                                <input type="text" className="price-input" placeholder="USD" id="priceInput"></input>
-                                <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
-                                <input type="number" className="qty-input" id="qtyInput"></input>
-                                <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
-                                <input type="text" className="gift-details-input" id="giftDetailsInput"></input>
-                            </form>
-                            <div className="content-media column">
-                                <div className="content-media__image">
-                                    <img src={logo2} width="250" height="190"></img>
-                                    <button className="btn-link content-media__upload-button">Upload a Photo</button>
-                                </div>
+                <div className="container add-gift-form" id="add-gift-form">
+                    <div className="header-add-gift-form">
+                        <h2 className="header-add-gift-title">Please Confirm the Following Details</h2>
+                    </div>
+                    <div className="row">
+                        <form className="column">
+                            <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
+                            <input type="text" className="gift-name-input" id="giftNameInput" placeholder="Tickets to a Music Festival"></input>
+                            <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
+                            <input type="text" className="price-input" placeholder="USD" id="priceInput"></input>
+                            <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
+                            <input type="number" className="qty-input" id="qtyInput"></input>
+                            <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
+                            <input type="text" className="gift-details-input" id="giftDetailsInput"></input>
+                        </form>
+                        <div className="content-media column">
+                            <div className="content-media__image">
+                                <img src={logo2} width="250" height="190"></img>
+                                <button className="btn-link content-media__upload-button">Upload a Photo</button>
                             </div>
                         </div>
-                        <footer className="buttons-cancel-next">
-                            <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                            <button id="next-btn" className="next-btn">Save</button>
-                        </footer>
                     </div>
+                    <footer className="buttons-cancel-next">
+                        <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
+                        <button id="next-btn" className="next-btn">Save</button>
+                    </footer>
                 </div>;
         }    
         

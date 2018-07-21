@@ -10,7 +10,7 @@ import PagesCount from '../components/PagesCount.jsx';
 import AddGiftCompBtn from '../components/AddGiftCompBtn.jsx';
 import MyStore from '../stores/MyStore.jsx';
 
-export default class AccountGiftBody extends React.Component{
+export default class AccountGiftBody extends Flux.Component{
     constructor(){
         super();
         
@@ -26,6 +26,7 @@ export default class AccountGiftBody extends React.Component{
     }
     
     componentDidMount(){
+        const gifts = MyStore.getGifts();
         // call the action that fetcchs the gifts
     }
     

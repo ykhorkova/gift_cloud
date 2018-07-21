@@ -10,6 +10,8 @@ class MyStore extends Flux.Store{
         };
     }
     
+    // Account
+    
     _setAccountCreated(status){
         console.log('setAccounts on the store',status);
         
@@ -22,20 +24,6 @@ class MyStore extends Flux.Store{
         return this.state.accountCreated;
     }
 
-    
-    _setGifts(gifts){
-       console.log('setGifts on the store',gifts);
-       
-       this.setStoreState({
-           gifts: gifts
-       }).emit();
-    }
-   
-    getGifts(){
-       return this.state.gifts;
-    }
-    
-
     _setAccounts(accounts){
         console.log('setAccounts on the store',accounts);
         
@@ -47,6 +35,30 @@ class MyStore extends Flux.Store{
     getAccounts(){
         return this.state.accounts;
     }
+    
+    // Gift
+    
+    _setGifts(gifts){
+       console.log('setGifts on the store',gifts);
+       
+       this.setStoreState({
+           gifts: gifts
+       }).emit();
+    }
+    
+    _setGiftCreated(gifts){
+       console.log('setGifts on the store',gifts);
+       
+       this.setStoreState({
+           gifts: gifts
+       }).emit();
+    }
+    
+    getGifts(){
+       return this.state.gifts;
+    }
+    
+
     
  }
 export default new MyStore();
