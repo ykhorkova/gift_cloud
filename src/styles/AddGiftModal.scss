@@ -7,26 +7,81 @@
     font: 13px/23px 'Raleway', sans-serif;
     color: $text-color;
     padding: 40px 0;
-    
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
     
 .container{   
     margin-top: 50px;
     margin-bottom: 50px;
-    margin: 0 auto;
-    width: 500px;
+    margin: auto;
+    width: 550px;
+    height: 400px;
     background: white;
     border-radius: 10%;
     border: 5px solid rgba(245,245,245, 0.5);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-}    
- 
+} 
+
+.first-form-container{
+    height: 350px!important;
+}
+
+form.column{
+    padding-left: 20px;
+}
+
+.column {
+    padding-left: 20px;
+    float: left;
+    width: 50%;
+}
+
+div.content-media .column{
+    text-align: center;
+}
+
+div.content-media__image{
+
+    text-align: center;
+}
 .add-a-gift-header-title, .header-add-gift-title{ 
     color: $purple;
     margin-right: 5px;
     font-size: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.input-label{
+    padding-bottom: 7px;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.private-btn-content, .public-btn-content{
+    padding-bottom: 7px;
+}
+
+.public-btn, .private-btn{
+    width: 120px;
+    border-radius: 5%;
+    background-color: ghostWhite;
+    
+    i {
+        padding-right: 5px;
+        color: $purple;
+    }
 }
 
 .url-tab, .create-gift-tab{
@@ -36,6 +91,7 @@
 .required{
     color: $text-color;
     font: 12px;
+    padding-left: 5px;
 }
 .add-a-url, .add-gift-name{
     padding-top: 10px;
@@ -43,23 +99,47 @@
     font-size: 13px;
 }
 
-label, .add-a-url, .add-gift-name{
+label, .add-a-url, .add-gift-name, .input-label{
     color: $dark-gray;
 }
 .url-input, .gift-name-input, .gift-name-input,
 .link-input, .price-input, .qty-input, .gift-details-input{
     border-style: none;
-    width: 460px;
+    width: 100%;
     border-bottom: 1px solid #dee2e6;
-    padding-bottom: 7px;
+    padding-bottom: 3px;
     color: $text-color;
+    
 }
 
+.buttons-cancel-next{
+    float: right;
+}
+footer.buttons-cancel-next{
+    padding-top: 20px;
+    padding-right: 15px;
+}
+.cancel-btn, {
+    color: white;
+    font-size: 15px;
+    background: $text-color;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 80px;
+    border-radius: 7%;
+    text-align: center;
+    margin-right: 10px;
+}
 
-
-
-
-
+#next-btn{
+    color: white;
+    font-size: 15px;
+    background: linear-gradient(#af96d4, #9b88b9);
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 80px;
+    border-radius: 7%;
+}
 
 
 }
