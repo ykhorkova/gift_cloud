@@ -21,8 +21,7 @@ export default class AccountGiftBody extends Flux.Component{
         this.bindStore(MyStore, () => {
             // this code gets executed everytime MyStore emits
             console.log('the bind works!');
-            
-            // this.props.history.push('/account');
+                        // this.props.history.push('/account');
         });
     }
     

@@ -3,9 +3,17 @@ import Flux from "@4geeksacademy/react-flux-dash";
 import { Link } from "react-router-dom";
 import logo2 from '../../img/logo2.png';
 import MyActions from "../actions/MyActions.jsx";
+import MyStore from '../stores/MyStore.jsx';
+import CardComponent from '../components/CardComponent.jsx';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 
-export default class AddGiftModal extends React.Component{
+ class AddGiftModal extends Flux.Component{
      constructor(){
         super();
         
@@ -20,8 +28,22 @@ export default class AddGiftModal extends React.Component{
         gift_details: "",
         store_name: "",
         privacy: ""
-        };    
+        };   
+        
+        this.bindStore(MyStore, () => {
+           console.log('the bind works!');
+            this.setState({});
+           // this code gets executed everytime MyStore emits
+           
+        //   if (this.state.buttonClicked == true){
+        //       console.log(this.props);
+        //       this.props.history.push('/account');
+        //       return;
+        //   }
+           //
+       });
     }
+    
     
     switchForms(){
         this.setState({ 
@@ -45,11 +67,11 @@ export default class AddGiftModal extends React.Component{
         });
     }
     
-    // goBack(){
-    //     this.setState({ 
-    //     window.history.back()
-    //     };
-    // }
+    
+    goBack(){
+        console.log(this.props);
+        this.props.history.push('/account');
+    }
 
     
         // scraper.init(this.state.link_url, function(data){
@@ -58,6 +80,10 @@ export default class AddGiftModal extends React.Component{
 
     
     render(){
+        if(this.state.buttonClicked === true){
+            return (<Redirect to="/account" />);
+        }
+        
         var firstForm = "";
         if (this.state.addAGift == true){
             firstForm =
@@ -211,3 +237,5 @@ export default class AddGiftModal extends React.Component{
                     );
    }
 }
+
+export default withRouter(AddGiftModal);

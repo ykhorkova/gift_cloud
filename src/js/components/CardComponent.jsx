@@ -6,7 +6,7 @@ import MyActions from "../actions/MyActions.jsx";
 import logo2 from '../../img/logo2.png';
 import PropTypes from 'prop-types';
 import MyStore from '../stores/MyStore.jsx';
-// import EditGiftOptions from '../components/EditGiftOptions.jsx';
+import EditGiftOptions from '../components/EditGiftOptions.jsx';
 
 
 export default class CardComponent extends React.Component{
@@ -26,6 +26,7 @@ export default class CardComponent extends React.Component{
         } else{
             giftPrivacy = <div><i className="fas fa-user-lock"></i></div>;
         }  
+        console.log("test", this.props);
         return(<div className="card-component">
             <div className="card-columns">
                 <div className="card">
@@ -44,9 +45,7 @@ export default class CardComponent extends React.Component{
                             <span className="publicity">{giftPrivacy}</span>
                         </div>
                         <div className="column">
-                            <button type="button" className="btn btn-secondary" data-content="here should be edir options" data-container="body" data-toggle="popover" data-placement="right">
-                                ...
-                            </button>
+                            <EditGiftOptions id={this.props.id}/>
                         </div>    
                     </div>
                 </div>    
@@ -64,7 +63,9 @@ CardComponent.propTypes = {
     privacy: PropTypes.string,
     gift_details: PropTypes.string,
     created_date: PropTypes.string,
-    store_name: PropTypes.string
+    store_name: PropTypes.string,
+    history: PropTypes.object,
+    id: PropTypes.string
 };
 
 

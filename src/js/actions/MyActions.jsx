@@ -110,6 +110,24 @@ class UserActions extends Flux.Action{
             })
             .catch(error => console.error('Error:', error));
     }
+    
+    deleteGift(id){
+        fetch(this.host+'/editgift/'+id, {
+            method: 'DELETE'
+            }).then(res => res.json())
+            .then(response => {
+                console.log('delete action!', id);
+                let gifts = MyStore.getGifts();
+                
+                let updatedGifts = gifts.filter((element, index) => {
+                    return element.id != id;
+                });
+                this.dispatch('MyStore.setGifts',updatedGifts);
+                console.log('Success:', response);
+                console.log(MyStore.updatedGifts);
+            })
+            .catch(error => console.error('Error:', error));
+    }
 
 }
     
