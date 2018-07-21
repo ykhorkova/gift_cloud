@@ -9,6 +9,7 @@ import FilterComponent from '../components/FilterComponent.jsx';
 import PagesCount from '../components/PagesCount.jsx';
 import AddGiftCompBtn from '../components/AddGiftCompBtn.jsx';
 import MyStore from '../stores/MyStore.jsx';
+import MyActions from '../actions/MyActions.jsx';
 
 export default class AccountGiftBody extends Flux.Component{
     constructor(){
@@ -26,12 +27,36 @@ export default class AccountGiftBody extends Flux.Component{
     }
     
     componentDidMount(){
+        MyActions.getGifts();
         const gifts = MyStore.getGifts();
+        this.setState({ gifts });
+        this.bindStore(MyStore,()=>{
+            const gifts = MyStore.getGifts();
+            this.setState({ gifts });
+        });
         // call the action that fetcchs the gifts
     }
     
     
     render(){
+        console.log("render",this.state.gifts);
+        const giftsInHtml = this.state.gifts.map((gift,i) => {
+                return <CardComponent
+                            key={i} 
+                            gift_name={gift.gift_name}
+                            price={gift.price}
+                            date={gift.created_date}
+                            store={gift.store_name}
+                            id={gift.id}
+                            privacy={gift.privacy}
+                            // onSave={(p) => {
+                                
+                            // }
+                                
+                            // }
+                        />;    
+                });     
+                        
         return(<div className="account-gift-body">
             <div className="container-fluid">
                 <div className="row body-row">
@@ -44,24 +69,12 @@ export default class AccountGiftBody extends Flux.Component{
                                 <PagesCount className="PagesCount" />
                             </div>
                         </div>
-                        <AddGiftCompBtn />
-                       
-                        <CardComponent
-                            // key={i} 
-                            // gift_name={gift.gift_name}
-                            // price={gift.price}
-                            // published_date={gift.published_date}
-                            // store={gift.store_name}
-                            // image={gift.image}
-                            // id={gift.id}
-                            // // onDelete={(p) => {
-                            // //     this.setState({
-                            // //         showModal: true,
-                            // //         contactDelete: contact
-                            // //     });
-                            // }}
-                            />
-                            
+                        <div className="gift-component-card">
+                            <ul className="grid-gifts">
+                                <li><AddGiftCompBtn /></li>
+                                <li>{giftsInHtml}</li>
+                            </ul>    
+                        </div>
                     </div>
                     <div className="col-4 sidebar-account-view">
                         <Events />

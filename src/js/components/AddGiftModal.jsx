@@ -159,6 +159,7 @@ export default class AddGiftModal extends React.Component{
                                 privacy: this.state.privacy,
                                 gift_details: this.state.gift_details
                             };
+                            
                             this.setState({ buttonClicked: true});
                             MyActions.createGift(createdGift);
                         }

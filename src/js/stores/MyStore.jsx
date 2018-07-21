@@ -6,7 +6,8 @@ class MyStore extends Flux.Store{
     constructor(){
         super();
         this.state = {
-            accountCreated: false
+            accountCreated: false,
+            gifts:[]
         };
     }
     
@@ -39,14 +40,6 @@ class MyStore extends Flux.Store{
     // Gift
     
     _setGifts(gifts){
-       console.log('setGifts on the store',gifts);
-       
-       this.setStoreState({
-           gifts: gifts
-       }).emit();
-    }
-    
-    _setGiftCreated(gifts){
        console.log('setGifts on the store',gifts);
        
        this.setStoreState({

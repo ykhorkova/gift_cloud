@@ -6,7 +6,7 @@ import MyActions from "../actions/MyActions.jsx";
 import logo2 from '../../img/logo2.png';
 import PropTypes from 'prop-types';
 import MyStore from '../stores/MyStore.jsx';
-
+// import EditGiftOptions from '../components/EditGiftOptions.jsx';
 
 
 export default class CardComponent extends React.Component{
@@ -19,11 +19,12 @@ export default class CardComponent extends React.Component{
 
 
     render(){
-        var publicPrivacy = "";
+        var giftPrivacy = "";
+        console.log("privacy", this.props);
         if (this.props.privacy == "Public"){
-            publicPrivacy = <div><i className="fas fa-globe"></i></div>;
+            giftPrivacy = <div><i className="fas fa-globe"></i></div>;
         } else{
-            publicPrivacy = <div><i className="fas fa-user-lock"></i></div>;
+            giftPrivacy = <div><i className="fas fa-user-lock"></i></div>;
         }  
         return(<div className="card-component">
             <div className="card-columns">
@@ -34,16 +35,18 @@ export default class CardComponent extends React.Component{
                     </div>
                     <div className="card-body">
                         <h5 className="card-title">{this.props.gift_name}</h5>
-                        <p className="store-name">STORE NAME</p>
+                        <p className="store-name">{this.props.store_name}</p>
                         <p className="gift-details">{this.props.gift_details}</p>
                     </div>    
                     <div className="card-footer row">
                         <div className="column">
                             <p className="date-added">{this.props.created_date}</p>
-                            <span className="publicity">{publicPrivacy}</span>
+                            <span className="publicity">{giftPrivacy}</span>
                         </div>
                         <div className="column">
-                            <button type="button" className="more">...</button>
+                            <button type="button" className="btn btn-secondary" data-content="here should be edir options" data-container="body" data-toggle="popover" data-placement="right">
+                                ...
+                            </button>
                         </div>    
                     </div>
                 </div>    
@@ -59,18 +62,20 @@ CardComponent.propTypes = {
     price: PropTypes.string,
     published_date: PropTypes.string,
     privacy: PropTypes.string,
-    gift_details: PropTypes.gift_details,
-    created_date: PropTypes.created_date
+    gift_details: PropTypes.string,
+    created_date: PropTypes.string,
+    store_name: PropTypes.string
 };
 
 
-// CardComponent.defaultProps = {
-//   onDelete: null,
-//   name: '',
-//   phone: '',
-//   email: '',
-//   address: '',
-//   image: ''
+CardComponent.defaultProps = {
+    gift_name: '',
+    price: '',
+    published_date: '',
+    privacy: '',
+    gift_details: '',
+    created_date: '',
+    store_name: ''
   
-// };
+};
                         

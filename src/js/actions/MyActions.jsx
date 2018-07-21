@@ -53,7 +53,7 @@ class UserActions extends Flux.Action{
 //   Gift Actions 
 
     getGifts(){
-       fetch('https://phyton-giftcloud-yelic29.c9users.io/gifts/')
+       fetch('https://phyton-giftcloud-yelic29.c9users.io/gift/')
            .then((resp) => {
                return resp.json();
            })
@@ -78,11 +78,14 @@ class UserActions extends Flux.Action{
             }).then(res => res.json())
             .then(response => {
                 console.log('Add an gift action!');
-                    this.dispatch('MyStore.setGiftCreated',true);
+                
+                const gifts = MyStore.getGifts();
+                gifts.push(incomingGift);
+                
+                this.dispatch('MyStore.setGifts',gifts);
             })
             .catch(error => {
                 console.error('Error:', error);
-                this.dispatch('MyStore.setGiftCreated',false);
             });
     }
     
