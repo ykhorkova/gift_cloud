@@ -7,11 +7,12 @@ export default class FilterComponent extends React.Component{
     render(){
         return(<div className="filter-component">
             <div className="btn-group" role="group" aria-label="Basic example">
-                <button type="button" className="btn btn-light">By Price</button>
-                <button type="button" className="btn btn-light">By Priority</button>
+                <span className="filter-by">Filter by: </span>
+                <button type="button" className="btn-by-price">By Price</button>
             </div>
         </div>
             
                         );
     }
 }
+                // <button type="button" className="btn btn-light">By Priority</button>/

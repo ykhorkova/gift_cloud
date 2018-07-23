@@ -7,7 +7,12 @@ class MyStore extends Flux.Store{
         super();
         this.state = {
             accountCreated: false,
+<<<<<<< HEAD
             cookie: ""
+=======
+            gifts:[],
+            LoginAccount: false
+>>>>>>> 5a5f1d38e2753cec344f518bb091d0ebce1267ee
         };
     }
     
@@ -37,17 +42,23 @@ class MyStore extends Flux.Store{
         return this.state.accounts;
     }
     
+    
+    getLoginAccount(){
+        return this.state.login;
+    }
+
+    _setLoginAccount(login){
+        console.log('setAccounts on the store',login);
+        
+        this.setStoreState({
+            login: login
+        }).emit();
+    }
+    
+    
     // Gift
     
     _setGifts(gifts){
-       console.log('setGifts on the store',gifts);
-       
-       this.setStoreState({
-           gifts: gifts
-       }).emit();
-    }
-    
-    _setGiftCreated(gifts){
        console.log('setGifts on the store',gifts);
        
        this.setStoreState({

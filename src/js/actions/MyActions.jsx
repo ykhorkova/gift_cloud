@@ -28,6 +28,22 @@ class UserActions extends Flux.Action{
             });
     }
    
+   
+    loginAccount(loggedInAccount){
+        fetch(this.host+'/login/', {
+                method: 'POST',
+                credentials: 'include',
+
+            }).then(res => res.json())
+            .then(response => {
+                console.log('Add an account action!');
+                    this.dispatch('MyStore.setLoginAccount',true);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                this.dispatch('MyStore.setLoginAccount',false);
+            });
+    }
 
     editAccount(idProfile){
         let accounts = MyStore.getAccounts();
@@ -53,6 +69,7 @@ class UserActions extends Flux.Action{
 //   Gift Actions 
 
     getGifts(){
+
        fetch(this.host+'/gifts/')
            .then((resp) => {
                return resp.json();
@@ -78,11 +95,14 @@ class UserActions extends Flux.Action{
             }).then(res => res.json())
             .then(response => {
                 console.log('Add an gift action!');
-                    this.dispatch('MyStore.setGiftCreated',true);
+                
+                const gifts = MyStore.getGifts();
+                gifts.push(incomingGift);
+                
+                this.dispatch('MyStore.setGifts',gifts);
             })
             .catch(error => {
                 console.error('Error:', error);
-                this.dispatch('MyStore.setGiftCreated',false);
             });
     }
     
@@ -104,6 +124,24 @@ class UserActions extends Flux.Action{
                     }
                 });
                 this.dispatch('MyStore.setGift',gifts);
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    
+    deleteGift(id){
+        fetch(this.host+'/editgift/'+id, {
+            method: 'DELETE'
+            }).then(res => res.json())
+            .then(response => {
+                console.log('delete action!', id);
+                let gifts = MyStore.getGifts();
+                
+                let updatedGifts = gifts.filter((element, index) => {
+                    return element.id != id;
+                });
+                this.dispatch('MyStore.setGifts',updatedGifts);
+                console.log('Success:', response);
+                console.log(MyStore.updatedGifts);
             })
             .catch(error => console.error('Error:', error));
     }

@@ -11,6 +11,8 @@ import AddGift from './views/AddGift.jsx';
 import FindFriends from './views/FindFriends.jsx';
 import SignUp from "./views/SignUp.jsx";
 import SignUpWithEmail from "./views/SignUpWithEmail.jsx";
+import EditGift from "./views/EditGift.jsx";
+import About from "./views/About.jsx";
 
 
 export default class Layout extends Flux.View {
@@ -23,6 +25,7 @@ export default class Layout extends Flux.View {
                             <Route exact path="/index.html" component={Home} />
                             <Route exact path="/" component={Home} />
                             <Route exact path="/home" component={Home} />
+                            <Route exact path="/about" component={About} />
                             <Route exact path="/signup" component={SignUp} />
                             <Route exact path="/signup/email" component={SignUpWithEmail} />
                             <Route exact path="/login" component={Login} />
@@ -30,6 +33,7 @@ export default class Layout extends Flux.View {
                             <Route exact path="/editaccount" component={EditAccount} />
                             <Route exact path="/findfriends" component={FindFriends} />
                             <Route exact path="/addgift" component={AddGift} />
+                            <Route exact path="/editgift" component={EditGift} />
                             <Route render={() => <h1>Not found!</h1>} />
                         </Switch>
                     </div>

@@ -1,19 +1,50 @@
 .account-gift-body{
+  
+  $text-color: #a6a4a2;
+  $purple: #A993CB;
+  $dark-gray: #6c6763;
+  
+  margin: auto;
+  padding-top: 10px;
+
 
 .body-row{
   padding: 5px;
 }
 
-.FilterComponent, .PagesCount{
+.filter-component{
+  
+  padding-bottom: 20px;
+  float: right;
+  
+  .btn-group{
     padding: 0;
     border: none;
-    color: black;
+    color: $dark-gray;
+  } 
+  
+  .filter-by{
+  padding: 12px;
+  }
+  
+  .btn-by-price{
+    border-style: none;
+    color: $text-color;
+  }
+  
 }
+  .grid-gifts{
+    list-style: none;
+    width: 23%;
+  }
 
 }
+
+  .grid-gifts li{
+    display: inline-block;
+  }  
 
 .add-gift-comp-btn{
-  
   
   $text-color: #a6a4a2;
   $purple: #A993CB;
@@ -48,6 +79,9 @@
     
   }
   
+  ul, li{
+  list-style-type: none;
+  } 
 // .round-button:hover {
 //     background: #262626;
 // }
