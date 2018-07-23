@@ -37,7 +37,7 @@ export default class EditGiftOptions extends Flux.Component{
                             <span className="label"><i className="fas fa-share-square"></i>Share Gift</span>
                         </button>
                         <hr className="popover__option--divider"></hr>
-                        <button className="popover__option strip-btn" onClick={(e) => this.deleteGift(this.props.id)}>
+                        <button className="popover__option strip-btn">
                             <span className="icon"></span>
                             <span className="label"><i className="fas fa-trash-alt"></i>Delete Item</span>
                         </button>

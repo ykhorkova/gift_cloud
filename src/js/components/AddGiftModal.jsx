@@ -158,8 +158,6 @@ import {
                         <form className="column">
                             <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
                             <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
-                            <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
-                            <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>
                             <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
                             <input type="text" className="price-input" placeholder="USD" id="priceInput" onChange={(e) => this.setState({ price: e.target.value})} value={this.state.price}></input>
                             <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
@@ -167,11 +165,11 @@ import {
                             <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
                             <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
                         </form>
-                    </div>
-                    <div className="content-media column">
-                        <div className="content-media__image">
-                            <img src={logo2} width="250" height="190"></img>
-                            <button className="btn-link content-media__upload-button">Upload a Photo</button>
+                        <div className="content-media column">
+                            <div className="content-media__image">
+                                <img src={logo2} width="250" height="190"></img>
+                                <button className="btn-link content-media__upload-button">Upload a Photo</button>
+                            </div>
                         </div>
                     </div>
                     <footer className="buttons-cancel-next">
@@ -239,3 +237,6 @@ import {
 }
 
 export default withRouter(AddGiftModal);
+
+                            // <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
+                            // <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>

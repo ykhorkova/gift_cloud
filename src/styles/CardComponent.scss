@@ -91,4 +91,102 @@ img{
   padding-top: 10px;
 }
 
+.edit-gift-options{
+  .strip-btn{
+    border: none;
+    background: none;
+  }
+
+i {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: $purple;
+}
+
+.label{
+  color: $dark-gray;
+}
+
+}
+
+
+}
+
+
+.edit-gift{
+ 
+  $text-color: #a6a4a2;
+  $purple: #A993CB;
+  $dark-gray: #6c6763;
+  
+  font-family: 'Raleway', sans-serif;
+  height: 500px;
+  width: 600px;
+  margin: auto;
+  padding-top: 150px;
+  
+  .all-gift-details{
+    border-radius: 10%;
+    border: 5px solid rgba(245, 245, 245, 0.5);
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .gift-image{
+    text-align: center;
+  }
+  
+  .change-image{
+    color: $dark-gray;
+    padding-top: 10px;
+    text-align: center;
+  }
+  
+  .change-image:hover {
+    text-decoration: underline;
+  }
+  
+  .card-img-top{
+    width: 70%;
+    border-style: 0.2px solid $purple;
+    border-radius: 5%;
+    background-color: ghostWhite;
+  }
+
+  .gift-details{
+    color: $dark-gray;
+    padding-left: 5px;
+  }
+  
+  .added-date{
+    font-size: 12px;
+    color: $text-color;
+  }
+  
+
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  .strip-btn{
+    border: none;
+    background: none;
+  }
+
+  i {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: $purple;
+  }
+
+  .label{
+    color: $dark-gray;
+  }
+  
+  .footer{
+    float: right;
+  } 
+
+  
 }

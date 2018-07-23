@@ -49,7 +49,7 @@ export default class CardComponent extends React.Component{
                         </div>    
                     </div>
                 </div>    
-            </div>
+            </div>  
         </div>
         );
     }

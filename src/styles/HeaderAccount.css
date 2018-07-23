@@ -1,0 +1,40 @@
+.header-account {
+  background-color: #F8F8FF;
+  font-family: 'Raleway', sans-serif, bold 700;
+  position: sticky;
+  z-index: 1500;
+  top: 0; }
+  .header-account .gift-cloud-name {
+    text-transform: uppercase;
+    color: #6c6763;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    font-family: Raleway; }
+  .header-account .nav-link {
+    color: #6c6763 !important; }
+  .header-account #about-header-button {
+    margin-top: 7px; }
+  .header-account Link:hover {
+    color: black; }
+  .header-account img {
+    width: 50px;
+    border-radius: 50%; }
+  .header-account .ul.li {
+    display: inline-block; }
+  .header-account .addGift, .header-account .findFriends {
+    padding-top: 15px; }
+  .header-account .dropdown-toggle {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .header-account .dropdown-item {
+    color: #6c6763; }
+  .header-account .dropdown-menu {
+    position: absolute;
+    overflow: auto;
+    z-index: 1; }
+  .header-account .right {
+    right: 0; }
+
+/*# sourceMappingURL=HeaderAccount.css.map */

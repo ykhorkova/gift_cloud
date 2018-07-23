@@ -64,9 +64,6 @@ export default class AccountGiftBody extends Flux.Component{
                             <div className="col-7">
                                 <FilterComponent className="FilterComponent"/>
                             </div>
-                            <div className="col-5">
-                                <PagesCount className="PagesCount" />
-                            </div>
                         </div>
                         <div className="gift-component-card">
                             <ul className="grid-gifts">
@@ -84,5 +81,10 @@ export default class AccountGiftBody extends Flux.Component{
             );
     }
 }
+                            // <div className="col-5">
+                            //     <PagesCount className="PagesCount" />
+                            // </div>
+                            
+                            
                         // <div className="upcoming-events">
                         // </div>

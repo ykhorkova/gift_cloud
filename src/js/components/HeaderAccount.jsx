@@ -28,12 +28,12 @@ export default class HeaderAccount extends React.Component{
                                         <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/nerd-face.png"></img>
                                     </span>
                                 </button>
-                                <div className="dropdown-menu md" aria-labelledby="dropdownMenu2">
-                                    <a className="dropdown-item" href="#">Your Nickname</a>
+                                <div className="dropdown-menu right md" aria-labelledby="dropdownMenu2">
+                                    <a className="dropdown-item" href="#"><i className="far fa-user"></i>My Profile</a>
                                     <div className="dropdown-divider">
                                     </div>
-                                    <Link className="dropdown-item" to="/login">Account Settings</Link>
-                                    <a className="dropdown-item" href="#">Log Out</a>
+                                    <Link className="dropdown-item" to="/login"><i className="fas fa-cog"></i>Settings</Link>
+                                    <a className="dropdown-item" href="#"><i className="fas fa-power-off"></i>Log Out</a>
                                 </div>
                             </div>
                         </li>
