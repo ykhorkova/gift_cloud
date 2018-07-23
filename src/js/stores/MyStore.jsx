@@ -6,7 +6,8 @@ class MyStore extends Flux.Store{
     constructor(){
         super();
         this.state = {
-            accountCreated: false
+            accountCreated: false,
+            cookie: ""
         };
     }
     

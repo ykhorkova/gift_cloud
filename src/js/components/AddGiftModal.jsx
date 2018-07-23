@@ -5,6 +5,7 @@ import logo2 from '../../img/logo2.png';
 import MyActions from "../actions/MyActions.jsx";
 
 
+
 export default class AddGiftModal extends React.Component{
      constructor(){
         super();
@@ -150,6 +151,7 @@ export default class AddGiftModal extends React.Component{
                     </div>
                     <footer className="buttons-cancel-next">
                         <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
+                        
                         <button onClick={() => {
                             let createdGift = {
                                 gift_name: this.state.gift_name,
@@ -159,10 +161,16 @@ export default class AddGiftModal extends React.Component{
                                 privacy: this.state.privacy,
                                 gift_details: this.state.gift_details
                             };
+                            
                             this.setState({ buttonClicked: true});
                             MyActions.createGift(createdGift);
+                            
+                            
                         }
-                            }
+                           
+                            
+                            
+                        }
                         className="save-btn" id="next-btn">Save</button>
                     </footer>
                 </div>;

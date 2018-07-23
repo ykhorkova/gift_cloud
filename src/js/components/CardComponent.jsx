@@ -55,6 +55,7 @@ export default class CardComponent extends React.Component{
                         // <span className="gift-priority"><i className="fas fa-bookmark"></i></span> 
                         
 CardComponent.propTypes = {
+    
     gift_name: PropTypes.string,
     price: PropTypes.string,
     published_date: PropTypes.string,

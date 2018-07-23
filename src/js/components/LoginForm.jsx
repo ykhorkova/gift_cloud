@@ -13,7 +13,7 @@ export default class LoginForm extends React.Component{
                     <a href="#" className="fb btn">
                         <i className="fab fa-facebook-square fa-2x clearfix"></i> Login with Facebook
                     </a>
-                    <a href="#" className="google btn">
+                    <a href="" className="google btn">
                         <i className="fab fa-google-plus-square fa-2x"></i> Login with Google
                     </a>
                 </div>    

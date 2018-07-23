@@ -53,7 +53,7 @@ class UserActions extends Flux.Action{
 //   Gift Actions 
 
     getGifts(){
-       fetch('https://phyton-giftcloud-yelic29.c9users.io/gifts/')
+       fetch(this.host+'/gifts/')
            .then((resp) => {
                return resp.json();
            })
