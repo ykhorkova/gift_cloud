@@ -44,9 +44,6 @@ export default class EditGiftOptions extends Flux.Component{
                     </div>
                 </div>
             </div>
-            
-            
-            
         </div>
         );
    }

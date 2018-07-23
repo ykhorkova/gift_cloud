@@ -1,0 +1,37 @@
+.about-page{
+    
+  $text-color: #a6a4a2;
+  $purple: #A993CB;
+  $dark-gray: #6c6763;
+  
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  
+    img{
+        width: 25%;
+    }
+    
+    .layout-about__intro{   
+    
+        align-self: center;
+        margin: 0 auto;
+        max-width: 36rem;
+        text-align: center;
+        padding-top: 120px;
+    
+    }
+    
+    .title{
+        color: $purple;
+    }
+    
+    .subtitle{
+        color: $dark-gray;
+    }
+    
+    
+    .first-content{
+        float: right;
+        width: 60%;
+    }
+}

@@ -28,6 +28,22 @@ class UserActions extends Flux.Action{
             });
     }
    
+   
+    loginAccount(loggedInAccount){
+        fetch(this.host+'/login/', {
+                method: 'POST',
+                credentials: 'include',
+
+            }).then(res => res.json())
+            .then(response => {
+                console.log('Add an account action!');
+                    this.dispatch('MyStore.setLoginAccount',true);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                this.dispatch('MyStore.setLoginAccount',false);
+            });
+    }
 
     editAccount(idProfile){
         let accounts = MyStore.getAccounts();

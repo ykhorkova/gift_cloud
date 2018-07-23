@@ -33,11 +33,18 @@
   }
   
 }
+  .grid-gifts{
+    list-style: none;
+    width: 23%;
+  }
 
 }
 
+  .grid-gifts li{
+    display: inline-block;
+  }  
+
 .add-gift-comp-btn{
-  
   
   $text-color: #a6a4a2;
   $purple: #A993CB;
