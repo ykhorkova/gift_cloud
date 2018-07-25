@@ -174,6 +174,7 @@ import {
                     </div>
                     <footer className="buttons-cancel-next">
                         <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
+                        
                         <button onClick={() => {
                             let createdGift = {
                                 gift_name: this.state.gift_name,
@@ -186,8 +187,13 @@ import {
                             
                             this.setState({ buttonClicked: true});
                             MyActions.createGift(createdGift);
+                            
+                            
                         }
-                            }
+                           
+                            
+                            
+                        }
                         className="save-btn" id="next-btn">Save</button>
                     </footer>
                 </div>;

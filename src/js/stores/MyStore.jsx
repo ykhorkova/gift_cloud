@@ -9,6 +9,7 @@ class MyStore extends Flux.Store{
             accountCreated: false,
             gifts:[],
             LoginAccount: false
+
         };
     }
     
