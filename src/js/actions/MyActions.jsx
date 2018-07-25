@@ -129,7 +129,12 @@ class UserActions extends Flux.Action{
         let gifts = MyStore.getGifts();
         
         fetch(this.host+'editgift/'+idGift, {
-            method: 'POST'})
+            method: 'POST',
+            headers:{
+                    'Authorization': this.token,
+                    'Content-Type': 'application/json'
+                }
+        })
             .then(res => res.json())
             .then(response => {
                 gifts = gifts.forEach((mygift) => {
@@ -148,7 +153,11 @@ class UserActions extends Flux.Action{
     
     deleteGift(id){
         fetch(this.host+'editgift/'+id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers:{
+                    'Authorization': this.token,
+                    'Content-Type': 'application/json'
+                }
             }).then(res => res.json())
             .then(response => {
                 console.log('delete action!', id);

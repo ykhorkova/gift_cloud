@@ -1,21 +1,11 @@
-.account-gift-body{
-  
+.gift-body-container{
+
   $text-color: #a6a4a2;
   $purple: #A993CB;
   $dark-gray: #6c6763;
   
-  margin: auto;
-  padding-top: 10px;
-
-
-.body-row{
-  padding: 5px;
-}
-
-.filter-component{
-  
   padding-bottom: 20px;
-  float: right;
+.filter-component{
   
   .btn-group{
     padding: 0;
@@ -33,32 +23,39 @@
   }
   
 }
-  .grid-gifts{
-    list-style: none;
-    width: 23%;
+
+.account-gift-body{
+  
+    display: inline-block;
+    margin: auto;
+
+
+  .gift-item{
+    max-width: 270px;
+    max-height: 390px;
+    padding-top: 20px;
+    margin: 20px;
+    float:left;
   }
 
-}
 
-  .grid-gifts li{
-    display: inline-block;
-  }  
-
-.add-gift-comp-btn{
+.add-gift-btn-plus{
   
   $text-color: #a6a4a2;
   $purple: #A993CB;
   $dark-gray: #6c6763;
   
-  width: 150px;
-  height: 150px;
+  // width: 150px;
+  // height: 150px;
   background-color: $text-color;
   border-radius: 2%;
+  max-width: 270px;
+  max-height: 390px;
   
   .btn-round{
     text-align: center;
-    padding-top: 30px;
-    padding-left: 50px;
+    padding-top: 80px;
+    padding-left: 110px;
   }
   
   .btn-plus-icon{
@@ -78,13 +75,7 @@
     font-weight: bold;
     
   }
-  
-  ul, li{
-  list-style-type: none;
-  } 
-// .round-button:hover {
-//     background: #262626;
-// }
+
   .add-a-gift{
     color: ghostWhite;
     font-size: 16px;
@@ -97,3 +88,6 @@
 }
 
 
+}
+
+}

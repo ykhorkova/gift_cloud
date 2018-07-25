@@ -23,8 +23,10 @@ export default class EditGiftOptions extends Flux.Component{
     
     render(){
         return(<div className="edit-gift-options">
-            <div className="btn-group dropright">
-                <button type="button" className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</button>
+            <div className="btn-group ">
+                <button type="button" className="btn btn-secondary" data-toggle="dropdown">
+                    <i className="fas fa-ellipsis-h"></i>
+                </button>
                 <div className="dropdown-menu">
                     <div className="popover__options">
                         <button className="popover__option strip-btn">
@@ -37,7 +39,7 @@ export default class EditGiftOptions extends Flux.Component{
                             <span className="label"><i className="fas fa-share-square"></i>Share Gift</span>
                         </button>
                         <hr className="popover__option--divider"></hr>
-                        <button className="popover__option strip-btn">
+                        <button onClick={(e) => this.deleteGift(this.props.id)} className="popover__option strip-btn">
                             <span className="icon"></span>
                             <span className="label"><i className="fas fa-trash-alt"></i>Delete Item</span>
                         </button>

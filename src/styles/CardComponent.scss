@@ -6,8 +6,9 @@
   $dark-gray: #6c6763;
   
   font-family: 'Raleway', sans-serif;
-  height: 500px;
-  width: 500px;
+  float: left;
+  // height: 500px;
+  // width: 500px;
   
 .card-header{
   padding: 0;
@@ -17,28 +18,28 @@ img{
   width: 100%;
 }
 
-.gift-priority{
-  color: red;
-  font-weight: bold;
-  float: right;
-  position: absolute;
-  right: 5px;
+// .gift-priority{
+//   color: red;
+//   font-weight: bold;
+//   float: right;
+//   position: absolute;
+//   right: 5px;
 
-}
+// }
 
 .price{
   border-style: 0.5px solid  $dark-gray;
   border-radius: 50%;
   background-color:  $text-color;
-  height: 27px;
-  width: 27px;
+  height: 30px;
+  width: 30px;
   color: ghostWhite;
   font-style: bold;
   padding-top: 5px;
   margin: auto;
   position: absolute;
-  top: 80px;
-  right: 70px;
+  left: 120px;
+  top: 250px;
 }
 
 .card-body{
@@ -61,50 +62,76 @@ img{
 }
 .card-title{
   color: #A993CB;
-  font-size: .875rem;
+  font-size: 18px;
   font-weight: bold;
+  text-transform: capitalize;
+}
+
+.gift-details{
+  font-size: 14px;
+  color: $dark-gray;
 }
 
 .card-footer{
-  margin: auto;
-  padding: 5px;
   border-style: none;
   background-color: white;
+  display: inherit;
+  padding-bottom: 10px;
 }
 
-.column{
-  float: left;
-  width: 50%;
-  padding-right: 0;
+// .edit-gift-opt{
+//   float: left;
+//   width: 50%;
+//   padding-right: 0;
+// }
+
+.publicity{
+    padding-top: 5px;
+    color: $purple;
 }
 
 .date-added{
   margin: auto;
+  color: $text-color;
 }
 
-.more{
-  border-style: none;
-  float: right !important;
-}
+// .more{
+//   border-style: none;
+//   float: right !important;
+// }
 
 .card-title{
   padding-top: 10px;
 }
 
 .edit-gift-options{
+  
+  .btn-secondary{
+    border: none;
+    background: none;
+    
+  }
+  .fa-ellipsis-h{
+    font-size: 18px;
+    color: $dark-gray;
+  }
+  
+  .dropdown-menu{
+    
   .strip-btn{
     border: none;
     background: none;
   }
 
-i {
-    padding-right: 10px;
-    padding-left: 10px;
-    color: $purple;
-}
+  i {
+      padding-right: 10px;
+      padding-left: 10px;
+      color: $purple;
+  }
 
-.label{
-  color: $dark-gray;
+  .label{
+    color: $dark-gray;
+  }
 }
 
 }

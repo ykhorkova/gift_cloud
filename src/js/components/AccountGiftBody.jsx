@@ -48,6 +48,7 @@ export default class AccountGiftBody extends Flux.Component{
                             store={gift.store_name}
                             id={gift.id}
                             privacy={gift.privacy}
+                            gift_details={gift.gift_details}
                             // onSave={(p) => {
                                 
                             // }
@@ -56,31 +57,40 @@ export default class AccountGiftBody extends Flux.Component{
                         />;    
                 });     
                         
-        return(<div className="account-gift-body">
-            <div className="container-fluid">
-                <div className="row body-row">
-                    <div className="col-8">
-                        <div className="row smaller-row">
-                            <div className="col-7">
-                                <FilterComponent className="FilterComponent"/>
-                            </div>
+        return(<div className="gift-body-container">
+            <div className="filter-component">
+                <FilterComponent className="FilterComponent"/>
+            </div>
+            <div className="account-gift-body">
+                <div className="gift-item">
+                    <div className="add-gift-btn-plus">
+                        <div className="btn-round">
+                            <Link to="/addgift" className="btn-plus-icon"> +
+                            </Link>
                         </div>
-                        <div className="gift-component-card">
-                            <ul className="grid-gifts">
-                                <li><AddGiftCompBtn /></li>
-                                <li>{giftsInHtml}</li>
-                            </ul>    
+                        <div className="add-a-gift-action">
+                            <h2 className="add-a-gift"> Add a new gift </h2>
                         </div>
-                    </div>
-                    <div className="col-4 sidebar-account-view">
-                        <Events />
                     </div>
                 </div>
+                {giftsInHtml}
             </div>
         </div>
             );
     }
 }
+                  
+                  
+              
+                  
+                  
+                    
+                    // <AddGiftCompBtn className="add-gifts-button"/>
+                    
+                    
+                    // <div className="column sidebar-account-view">
+                    //     <Events />
+                    // </div>
                             // <div className="col-5">
                             //     <PagesCount className="PagesCount" />
                             // </div>
