@@ -7,12 +7,9 @@ class MyStore extends Flux.Store{
         super();
         this.state = {
             accountCreated: false,
-<<<<<<< HEAD
-            cookie: ""
-=======
             gifts:[],
             LoginAccount: false
->>>>>>> 5a5f1d38e2753cec344f518bb091d0ebce1267ee
+
         };
     }
     
