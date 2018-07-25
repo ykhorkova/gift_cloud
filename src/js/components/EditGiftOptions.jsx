@@ -17,8 +17,28 @@ export default class EditGiftOptions extends Flux.Component{
        });
     }
     
+    
+    
+    
+
     componentDidMount(){
-        console.log("test2", this.props);
+        // const gifts = MyStore.getGifts();
+        // if (this.props.match.params.user_id){
+        //     this.setState({
+        //         edit: true
+        //     });
+        // }
+        // contacts.forEach((item) => {
+        //     if(item.id == this.props.match.params.user_id){
+        //         this.setState({
+        //             full_name: item.full_name,
+        //             phone: item.phone,
+        //             email: item.email,
+        //             address: item.address,
+        //             id: item.id
+        //         });
+        //     }
+        // });
     }
     
     render(){
@@ -29,7 +49,7 @@ export default class EditGiftOptions extends Flux.Component{
                 </button>
                 <div className="dropdown-menu">
                     <div className="popover__options">
-                        <button className="popover__option strip-btn">
+                        <button onClick={(e) => this.editGift(this.props.id)} className="popover__option strip-btn">
                             <span className="icon"></span> 
                             <span className="label"><i className="fas fa-pencil-alt"></i>Edit</span>
                         </button>

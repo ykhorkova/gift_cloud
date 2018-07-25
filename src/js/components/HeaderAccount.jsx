@@ -20,15 +20,15 @@ export default class HeaderAccount extends React.Component{
                         </li>
                         <li className="nav-item" id="find-friends-header-button">
                             <Link className="nav-link findFriends" to="/FindFriends">Find Friends</Link>
-                        </li>
-                        <li className="dropdown-icon">
+                        </li> 
+                        <li className="dropdown-icon"> 
                             <div className="dropdown">
                                 <button className="btn btn-light dropdown-toggle" type="checkbox" id="toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span className="header-widescreen__member--icon">
                                         <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/nerd-face.png"></img>
                                     </span>
                                 </button>
-                                <div className="dropdown-menu right md" aria-labelledby="dropdownMenu2">
+                                <div className="dropdown-menu right md" aria-labelledby="dropdownMenu2" id="account-menu-down">
                                     <a className="dropdown-item" href="#"><i className="far fa-user"></i>My Profile</a>
                                     <div className="dropdown-divider">
                                     </div>

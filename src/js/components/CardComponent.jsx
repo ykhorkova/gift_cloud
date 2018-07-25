@@ -34,7 +34,7 @@ export default class CardComponent extends React.Component {
                     <div className="card">
                         <div className="card-header">
                             <img className="card-img-top" src={logo2}></img>
-                            <p className="price"> {this.props.price}</p>
+                            <p className="price"> {this.props.price} $</p>
                         </div>
                         <div className="card-body">
                             <h5 className="card-title">{this.props.gift_name}</h5>
