@@ -5,13 +5,14 @@ class UserActions extends Flux.Action{
     
     constructor(){
         super();
-        this.host = 'https://phyton-giftcloud-yelic29.c9users.io';
+        this.host = 'https://backend-wl-project-ykhorkova.c9users.io/';
+        this.token = 'token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b';
     }
     
     // Account Actions
     
     createAccount(incomingAccount){
-        fetch(this.host+'/profile/', {
+        fetch(this.host+'profile/', {
                 method: 'PUT',
                 body: JSON.stringify(incomingAccount),
                 headers:{
@@ -30,9 +31,15 @@ class UserActions extends Flux.Action{
    
    
     loginAccount(loggedInAccount){
-        fetch(this.host+'/login/', {
+        fetch(this.host+'login/', {
                 method: 'POST',
-                credentials: 'include',
+                body: JSON.stringify(loggedInAccount),
+                credentials: 'same-origin',
+                headers:{
+                    'Authorization': this.token,
+                    // 'Authorization': 'Token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b',
+                    'Content-Type': 'application/json'
+                }
 
             }).then(res => res.json())
             .then(response => {
@@ -48,7 +55,7 @@ class UserActions extends Flux.Action{
     editAccount(idProfile){
         let accounts = MyStore.getAccounts();
         
-        fetch(this.host+'/editprofile/'+idProfile, {
+        fetch(this.host+'editprofile/'+idProfile, {
             method: 'POST'})
             .then(res => res.json())
             .then(response => {
@@ -69,10 +76,20 @@ class UserActions extends Flux.Action{
 //   Gift Actions 
 
     getGifts(){
-
-       fetch(this.host+'/gifts/')
+       fetch(this.host+'gift/', {
+                headers:{
+                    'Authorization': this.token,
+                    'Content-Type': 'application/json', 
+                }
+            }
+       )
            .then((resp) => {
-               return resp.json();
+               if (resp.status != 200){
+                console.error("you need to login");
+               }
+                else {
+                    return resp.json();
+                }
            })
            .then((gifts) => {
                // distpatch to the store
@@ -86,10 +103,11 @@ class UserActions extends Flux.Action{
     
 
     createGift(incomingGift){
-        fetch(this.host+'/gift/', {
+        fetch(this.host+'gift/', {
                 method: 'PUT',
                 body: JSON.stringify(incomingGift),
                 headers:{
+                    'Authorization': this.token,
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json())
@@ -110,7 +128,7 @@ class UserActions extends Flux.Action{
     editGift(idGift){
         let gifts = MyStore.getGifts();
         
-        fetch(this.host+'/editgift/'+idGift, {
+        fetch(this.host+'editgift/'+idGift, {
             method: 'POST'})
             .then(res => res.json())
             .then(response => {
@@ -129,7 +147,7 @@ class UserActions extends Flux.Action{
     }
     
     deleteGift(id){
-        fetch(this.host+'/editgift/'+id, {
+        fetch(this.host+'editgift/'+id, {
             method: 'DELETE'
             }).then(res => res.json())
             .then(response => {

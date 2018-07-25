@@ -19,7 +19,8 @@ export default class LoginForm extends Flux.Component{
         
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            token: ""
         };
         
         this.bindStore(MyStore, () => {
@@ -31,9 +32,9 @@ export default class LoginForm extends Flux.Component{
     }
     
     render(){
-        //  if(this.state.buttonClicked === true){
-        //     return (<Redirect to="/account" />);
-        // }
+         if(this.state.buttonClicked === true){
+            return (<Redirect to="/account" />);
+        }
         
         return(<div className="login-form container">
             <div className="container">
@@ -55,7 +56,6 @@ export default class LoginForm extends Flux.Component{
                 <input type="text" name="username" placeholder="you@example.com" onChange={(e) => this.setState({ email: e.target.value})} value={this.state.email}/>
                 <input type="password" name="password" placeholder="Password" onChange={(e) => this.setState({ password: e.target.value})} value={this.state.password}/>
                 <input onClick={() => {
-                                console.log(this.state.birthdate);
                                 let loginAccount = {
                                     email: this.state.email,
                                     password: this.state.password

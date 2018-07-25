@@ -48,7 +48,7 @@ class MyStore extends Flux.Store{
         console.log('setAccounts on the store',login);
         
         this.setStoreState({
-            login: login
+            login: login,
         }).emit();
     }
     

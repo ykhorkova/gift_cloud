@@ -15,7 +15,7 @@ export default class About extends React.Component{
                 <div className="container-wide stacked-children">
                     <header className="layout-about__intro">
                         <h1 className="title">The Best Wish List&nbsp;Ever</h1>
-                        <h2 className="subtitle">Gift Cloud delivers a universal wish list that’s simple to navigate, aesthetically pleasing, and a re‑gifting&nbsp;squasher.</h2>
+                        <h4 className="subtitle">Gift Cloud delivers a universal wish list that’s simple to navigate, aesthetically pleasing, and a re‑gifting&nbsp;squasher.</h4>
                     </header>
                     <section className="layout-about__explainer whitespace-top whitespace-bottom">
                         <figure data-aos="fade" className="visual">
@@ -29,7 +29,7 @@ export default class About extends React.Component{
                     <section className="layout-about__explainer layout-about__explainer--switch whitespace-bottom-large">
                         <div className="content">
                             <h3 className="section-title">Why a Universal Wish List?</h3>
-                            <p>You’ve made your lists and checked them twice...and again...and again. Registering with multiple retailers isn’t just a pain for you to maintain but also a nuisance for your loved ones to decipher. With Gift Cloud, anytime you see something online that you need or want, you can add that item to a wish list using your desktop, smartphone, or&nbsp;tablet.</p>
+                            <p>You’ve made your lists and checked them twice...and again...and again. Registering with multiple retailers isn’t just a pain for you to maintain but also a nuisance for your loved ones to decipher. With Gift Cloud, anytime you see something online that you need or want, you can add that item to a list just copying a link!</p>
                         </div>
                     </section>
                 </div>
