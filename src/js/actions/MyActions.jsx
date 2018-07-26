@@ -6,7 +6,8 @@ class UserActions extends Flux.Action{
     constructor(){
         super();
         this.host = 'https://backend-wl-project-ykhorkova.c9users.io/';
-        this.token = 'token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b';
+        this.token = '';
+        this.userId = '';
     }
     
     // Account Actions
@@ -21,6 +22,8 @@ class UserActions extends Flux.Action{
             }).then(res => res.json())
             .then(response => {
                 console.log('Add an account action!');
+                    this.token = 'token '+response.token;
+                    this.userId = response.user_id;
                     this.dispatch('MyStore.setAccountCreated',true);
             })
             .catch(error => {
@@ -76,7 +79,7 @@ class UserActions extends Flux.Action{
 //   Gift Actions 
 
     getGifts(){
-       fetch(this.host+'gift/', {
+       fetch(this.host+'profile/'+this.userId+'/gift/', {
                 headers:{
                     'Authorization': this.token,
                     'Content-Type': 'application/json', 

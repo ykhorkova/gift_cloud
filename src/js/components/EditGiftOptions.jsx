@@ -22,13 +22,14 @@ export default class EditGiftOptions extends Flux.Component{
     
 
     componentDidMount(){
+        MyActions.getGifts();
         // const gifts = MyStore.getGifts();
         // if (this.props.match.params.user_id){
         //     this.setState({
         //         edit: true
         //     });
         // }
-        // contacts.forEach((item) => {
+        // gifts.forEach((item) => {
         //     if(item.id == this.props.match.params.user_id){
         //         this.setState({
         //             full_name: item.full_name,
@@ -42,6 +43,9 @@ export default class EditGiftOptions extends Flux.Component{
     }
     
     render(){
+        // if(this.state.buttonClicked === true){
+        //     return (<Redirect to="/editgift" />);
+        // }
         return(<div className="edit-gift-options">
             <div className="btn-group ">
                 <button type="button" className="btn btn-secondary" data-toggle="dropdown">
