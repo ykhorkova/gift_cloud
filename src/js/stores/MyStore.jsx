@@ -8,8 +8,8 @@ class MyStore extends Flux.Store{
         this.state = {
             accountCreated: false,
             gifts:[],
-            LoginAccount: false
-
+            LoginAccount: false,
+            login:{}
         };
     }
     
@@ -50,6 +50,11 @@ class MyStore extends Flux.Store{
         this.setStoreState({
             login: login,
         }).emit();
+    }
+    
+    getToken(){
+        console.log("STORE:getToken");
+        return this.state.login.token;
     }
     
     

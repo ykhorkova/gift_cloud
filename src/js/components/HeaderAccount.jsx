@@ -33,7 +33,7 @@ export default class HeaderAccount extends React.Component{
                                     <div className="dropdown-divider">
                                     </div>
                                     <Link className="dropdown-item" to="/login"><i className="fas fa-cog"></i>Settings</Link>
-                                    <a className="dropdown-item" href="#"><i className="fas fa-power-off"></i>Log Out</a>
+                                    <a className="dropdown-item" href="/login"><i className="fas fa-power-off"></i>Log Out</a>
                                 </div>
                             </div>
                         </li>

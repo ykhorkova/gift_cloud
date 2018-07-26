@@ -6,7 +6,7 @@ class UserActions extends Flux.Action{
     constructor(){
         super();
         this.host = 'https://ide.c9.io/yelic29/phyton-giftcloud';
-        this.token = 'token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b';
+        this.token = '';
     }
     
     // Account Actions
@@ -21,6 +21,8 @@ class UserActions extends Flux.Action{
             }).then(res => res.json())
             .then(response => {
                 console.log('Add an account action!');
+                    this.token = 'token '+response.token;
+                    this.userId = response.user_id;
                     this.dispatch('MyStore.setAccountCreated',true);
             })
             .catch(error => {
@@ -36,21 +38,57 @@ class UserActions extends Flux.Action{
                 body: JSON.stringify(loggedInAccount),
                 credentials: 'same-origin',
                 headers:{
-                    'Authorization': this.token,
                     // 'Authorization': 'Token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b',
                     'Content-Type': 'application/json'
                 }
 
-            }).then(res => res.json())
+            }).then(res => {
+                console.log("LOGIN",res);
+                if (res.status != 200){
+                    alert("WRONG PASSWORD OR USERNAME");
+                    return;
+                }
+                return res.json();
+                
+            })
             .then(response => {
+                this.token = 'token '+response.token;
                 console.log('Add an account action!');
-                    this.dispatch('MyStore.setLoginAccount',true);
+                    this.dispatch('MyStore.setLoginAccount', response);
             })
             .catch(error => {
                 console.error('Error:', error);
                 this.dispatch('MyStore.setLoginAccount',false);
             });
     }
+    
+    // LOGOUT
+
+    // logoutAccount(logOutAccount){
+    //     fetch(this.host+'login/', {
+    //             method: 'POST',
+    //             credentials: 'same-origin',
+    //             headers:{
+    //                 // 'Authorization': 'Token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b',
+    //                 'Content-Type': 'application/json'
+    //             }
+
+    //         }).then(res => {
+    //             return res.json();
+                
+    //         })
+    //         .then(response => {
+    //             console.log('Add an account action!');
+    //                 this.dispatch('MyStore.setLoginAccount', response);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //             this.dispatch('MyStore.setLoginAccount',false);
+    //         });
+    // }
+
+
+
 
     editAccount(idProfile){
         let accounts = MyStore.getAccounts();
@@ -76,6 +114,8 @@ class UserActions extends Flux.Action{
 //   Gift Actions 
 
     getGifts(){
+        console.log("GET-GIFTS", this.token);
+        console.log("GET-GIFTS2", MyStore.getToken());
        fetch(this.host+'gift/', {
                 headers:{
                     'Authorization': this.token,
@@ -85,7 +125,7 @@ class UserActions extends Flux.Action{
        )
            .then((resp) => {
                if (resp.status != 200){
-                console.error("you need to login");
+                console.error("GIFT", "you need to login");
                }
                 else {
                     return resp.json();
