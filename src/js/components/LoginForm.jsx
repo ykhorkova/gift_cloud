@@ -24,10 +24,8 @@ export default class LoginForm extends Flux.Component{
         };
         
         this.bindStore(MyStore, () => {
-            console.log('the bind works!');
-            this.setState({
-                accountLogin: MyStore.getLoginAccount()
-            });
+            console.log('AFTER WE LOGIN!');
+            this.setState({ buttonClicked: true});
         });
     }
     
@@ -60,7 +58,6 @@ export default class LoginForm extends Flux.Component{
                                     email: this.state.email,
                                     password: this.state.password
                                 };
-                            this.setState({ buttonClicked: true});
                                 MyActions.loginAccount(loginAccount);
                             }
                                 }    

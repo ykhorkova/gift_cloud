@@ -17,7 +17,9 @@ export default class EditGiftOptions extends Flux.Component{
        });
     }
     
-    
+    editGift(idGift){
+        MyActions.editGift(idGift);
+    }
     
     
 
