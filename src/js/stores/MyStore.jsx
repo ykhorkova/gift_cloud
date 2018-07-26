@@ -5,11 +5,14 @@ class MyStore extends Flux.Store{
     
     constructor(){
         super();
+        const token = localStorage.getItem("token");
         this.state = {
             accountCreated: false,
             gifts:[],
             LoginAccount: false,
-            login:{}
+            login:{
+                token:token
+            }
         };
     }
     
@@ -50,6 +53,7 @@ class MyStore extends Flux.Store{
         this.setStoreState({
             login: login,
         }).emit();
+        localStorage.setItem("token", login.token);
     }
     
     getToken(){

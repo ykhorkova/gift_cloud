@@ -1,6 +1,6 @@
 import React from "react";
 import Flux from "@4geeksacademy/react-flux-dash";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import MyActions from '../actions/MyActions.jsx';
 
 export default class EditGiftOptions extends Flux.Component{

@@ -1,18 +1,51 @@
 .find-friends{
+    $text-color: #a6a4a2;
+    $purple: #A993CB;
+    $dark-gray: #6c6763;
     
-.conteinercenter{
-    padding-top: 100px;
-    padding-bottom: 50px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-size: cover;
+    font: 13px/23px 'Raleway', sans-serif;
+    color: $text-color;
+    padding: 40px 0;
+    padding-top: 130px;
+    
+.container{   
+    margin-top: 130px;
+    margin-bottom: 50px;
+    margin: auto;
+    padding-left: 30px;
+    width: 550px;
+    height: 300px;
+    background: white;
+    border-radius: 10%;
+    border: 5px solid rgba(245,245,245, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
 }
 
-.conteinerleft{
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 2px;
-    margin-left: 2px;
-    background-color: grey;
+.find-friends-header{
+    color: $purple;
+    padding-top: 20px;
 }
 
+.find-friends-p{
+    color: $dark-gray;
+    padding-top: 20px; 
+}
+
+.ff-input{
+    outline: none;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border: none;
+    border-radius: 3px;
+    background: #f7f6f5;
+    margin: 20px auto;
+    height: 50px;
+    padding-left: 10px;
+}
+
+.invite{
+    padding-left: 10px;
+}
 }

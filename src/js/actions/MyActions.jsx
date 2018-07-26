@@ -53,7 +53,7 @@ class UserActions extends Flux.Action{
                 
             })
             .then(response => {
-                this.token = 'token '+response.token;
+                // this.token = 'token '+response.token;
                 console.log('Add an account action!');
                     this.dispatch('MyStore.setLoginAccount', response);
             })
@@ -119,7 +119,7 @@ class UserActions extends Flux.Action{
         console.log("GET-GIFTS2", MyStore.getToken());
        fetch(this.host+'gift/', {
                 headers:{
-                    'Authorization': this.token,
+                    'Authorization': "Token " + MyStore.getToken(),
                     'Content-Type': 'application/json', 
                 }
             }

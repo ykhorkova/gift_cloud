@@ -1,11 +1,20 @@
 // JavaScript File
 import React from "react";
 import Flux from "@4geeksacademy/react-flux-dash";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import logo2 from '../../img/logo2.png';
+import MyActions from '../actions/MyActions.jsx';
 
-export default class HeaderAccount extends React.Component{
-       render(){
+export default class HeaderAccount extends Flux.Component{
+    constructor(){
+    super();
+    
+    }
+    
+    
+    
+    
+    render(){
         return(<div className="header-account">
             <nav className="navbar navbar-expand-md"> 
                 <div className="collapse navbar-collapse" id="main-page-header">
@@ -29,11 +38,11 @@ export default class HeaderAccount extends React.Component{
                                     </span>
                                 </button>
                                 <div className="dropdown-menu right md" aria-labelledby="dropdownMenu2" id="account-menu-down">
-                                    <a className="dropdown-item" href="#"><i className="far fa-user"></i>My Profile</a>
+                                    <Link className="dropdown-item" to="/profile"><i className="far fa-user"></i>My Profile</Link>
                                     <div className="dropdown-divider">
                                     </div>
-                                    <Link className="dropdown-item" to="/login"><i className="fas fa-cog"></i>Settings</Link>
-                                    <a className="dropdown-item" href="/login"><i className="fas fa-power-off"></i>Log Out</a>
+                                    <Link className="dropdown-item" to="/editaccount"><i className="fas fa-cog"></i>Settings</Link>
+                                    <Link className="dropdown-item" to="/login"><i className="fas fa-power-off"></i>Log Out</Link>
                                 </div>
                             </div>
                         </li>
