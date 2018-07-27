@@ -57,7 +57,7 @@ export default class EditGiftOptions extends Flux.Component{
                     <div className="popover__options">
                         <button onClick={(e) => this.editGift(this.props.id)} className="popover__option strip-btn">
                             <span className="icon"></span> 
-                            <span className="label"><i className="fas fa-pencil-alt"></i>Edit</span>
+                            <Link to="/editgift" className="label"><i className="fas fa-pencil-alt"></i>Edit</Link>
                         </button>
                         <hr className="popover__option--divider"></hr>
                         <button className="popover__option strip-btn">

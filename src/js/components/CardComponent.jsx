@@ -43,7 +43,7 @@ export default class CardComponent extends React.Component {
                         </div>    
                         <div className="card-footer">
                             <span className="publicity">{giftPrivacy}</span>
-                            <p className="date-added">June 2018</p>
+                            <p className="date-added">July 2018</p>
                             <span className="edit-gift-opt">
                                 <EditGiftOptions id={this.props.id}/>
                             </span>    
@@ -66,6 +66,7 @@ CardComponent.propTypes = {
     created_date: PropTypes.string,
     store_name: PropTypes.string,
     history: PropTypes.object,
+    // img_url: PropTypes.string,
     id: PropTypes.number
 };
 
@@ -78,5 +79,5 @@ CardComponent.defaultProps = {
     gift_details: '',
     created_date: '',
     store_name: ''
-
+    // img_url: ''
 };

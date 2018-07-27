@@ -7,6 +7,8 @@ class UserActions extends Flux.Action{
         super();
         this.host = 'https://phyton-giftcloud-yelic29.c9users.io/';
         this.token = '';
+        // this.giftUrl = "https://api.urlmeta.org/?url=";
+    
         // this.userId = '';
     }
     
@@ -63,33 +65,6 @@ class UserActions extends Flux.Action{
             });
     }
     
-    // LOGOUT
-
-    // logoutAccount(logOutAccount){
-    //     fetch(this.host+'login/', {
-    //             method: 'POST',
-    //             credentials: 'same-origin',
-    //             headers:{
-    //                 // 'Authorization': 'Token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b',
-    //                 'Content-Type': 'application/json'
-    //             }
-
-    //         }).then(res => {
-    //             return res.json();
-                
-    //         })
-    //         .then(response => {
-    //             console.log('Add an account action!');
-    //                 this.dispatch('MyStore.setLoginAccount', response);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error:', error);
-    //             this.dispatch('MyStore.setLoginAccount',false);
-    //         });
-    // }
-
-
-
 
     editAccount(idProfile){
         let accounts = MyStore.getAccounts();
@@ -116,9 +91,10 @@ class UserActions extends Flux.Action{
 
     getGifts(){
         console.log("GET-GIFTS", this.token);
-        console.log("GET-GIFTS2", MyStore.getToken());
+        // console.log("GET-GIFTS2", MyStore.getToken());
        fetch(this.host+'gift/', {
                 headers:{
+                    // 'Authorization': this.token,
                     'Authorization': "Token " + MyStore.getToken(),
                     'Content-Type': 'application/json', 
                 }
@@ -141,14 +117,13 @@ class UserActions extends Flux.Action{
        });
    }
     
-    
 
     createGift(incomingGift){
         fetch(this.host+'gift/', {
                 method: 'PUT',
                 body: JSON.stringify(incomingGift),
                 headers:{
-                    'Authorization': this.token,
+                    'Authorization': "Token " + MyStore.getToken(),
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json())
@@ -165,6 +140,31 @@ class UserActions extends Flux.Action{
             });
     }
     
+    // createGiftWithUrl(pasteUrl){
+    //     fetch(this.giftUrl+ pasteUrl, {
+    //             mode: "no-cors", // no-cors, cors, *same-origin
+    //             //cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    //             // credentials: "same-origin", // include, same-origin, *omit
+    //             headers:{
+    //                 'Content-Type': 'application/json', 
+    //             }
+    //         }).then(res => res.json())
+    //         .then(response => {
+    //             console.log('Add an gift action!');
+ 
+                
+    //             this.dispatch('MyStore.setUrlGifts',pasteUrl);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+                
+    // }
+
+
+
+
+
 
     editGift(idGift){
         let gifts = MyStore.getGifts();

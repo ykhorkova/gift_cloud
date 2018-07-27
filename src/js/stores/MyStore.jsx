@@ -9,6 +9,7 @@ class MyStore extends Flux.Store{
         this.state = {
             accountCreated: false,
             gifts:[],
+            urlGifts: [],
             LoginAccount: false,
             login:{
                 token:token
@@ -76,7 +77,22 @@ class MyStore extends Flux.Store{
        return this.state.gifts;
     }
     
+    // Gift URL
+    
+    // _setUrlGifts(urlGifts){
+    //   console.log('setGifts on the store',urlGifts);
+       
+    //   this.setStoreState({
+    //       urlGifts: urlGifts
+    //   }).emit();
+    // }
 
+    // getUrlGifts(){
+    //   return this.state.urlGifts;
+    // }
+    
+    
+    
     
  }
 export default new MyStore();

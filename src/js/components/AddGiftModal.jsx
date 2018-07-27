@@ -27,21 +27,18 @@ import {
         quantity: "",
         gift_details: "",
         store_name: "",
-        privacy: ""
+        privacy: "",
+        // img_url: ""
+        // giftUrl: ""
+        
         };   
         
-        this.bindStore(MyStore, () => {
-           console.log('the bind works!');
-            this.setState({});
-           // this code gets executed everytime MyStore emits
-           
-        //   if (this.state.buttonClicked == true){
-        //       console.log(this.props);
-        //       this.props.history.push('/account');
-        //       return;
-        //   }
-           //
-       });
+    //     this.bindStore(MyStore, () => {
+    //       console.log("addgiftmodal", 'the bind works!');
+    //       const urlGift = MyStore.getUrlGifts();
+    //         this.setState({});
+      
+    //   });
     }
     
     
@@ -73,17 +70,24 @@ import {
         this.props.history.push('/account');
     }
 
-    
-        // scraper.init(this.state.link_url, function(data){
-        //     console.log(data);
-        // });
+    componentDidMount(){
+        this.bindStore(MyStore, () => {
+        //   console.log("addgiftmodal", 'the bind works!');
+           
+        //   const urlGift = MyStore.getUrlGifts();
+        //   console.log("addgiftmodal", urlGift);
+        //     this.setState({description: ""});
+      
+       });
+    }
+
 
     
     render(){
         if(this.state.buttonClicked === true){
             return (<Redirect to="/account" />);
         }
-        
+
         var firstForm = "";
         if (this.state.addAGift == true){
             firstForm =
@@ -104,7 +108,6 @@ import {
                             <div className="url-tab-content">
                                 <h3 className="add-a-url">Paste a Link from Anywhere on the Web <span className="required">Required</span></h3>
                                 <input className="url-input" placeholder="https://"></input>
-                                
                                 <div className="privacy-form">
                                     <div className="privacy-title">
                                         <h2 className="input-label">Who Can See this Wish List?<span className="required">Required</span></h2>
@@ -119,7 +122,7 @@ import {
                                
                                 <footer className="buttons-cancel-next">
                                     <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                                    <button id="next-btn" className="next-btn" onClick={(e) => this.switchUrlForms()}>Next</button>
+                                    <button id="next-btn" className="next-btn" onClick={(e) => this.switchForms()}>Next</button>
                                 </footer>
                             </div>
                         </div>
@@ -174,7 +177,6 @@ import {
                     </div>
                     <footer className="buttons-cancel-next">
                         <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                        
                         <button onClick={() => {
                             let createdGift = {
                                 gift_name: this.state.gift_name,
@@ -209,13 +211,13 @@ import {
                     <div className="row">
                         <form className="column">
                             <label htmlFor="giftNameInput">Gift Name <span className="required">Required</span></label>
-                            <input type="text" className="gift-name-input" id="giftNameInput" placeholder="Tickets to a Music Festival"></input>
+                            <input type="text" className="gift-name-input" id="giftNameInput" onChange={(e) => this.setState({ gift_name: e.target.value})} value={this.state.gift_name} placeholder="Tickets to a Music Festival"></input>
                             <label className="price" htmlFor="priceInput">Price <span className="required">Required</span></label>
-                            <input type="text" className="price-input" placeholder="USD" id="priceInput"></input>
+                            <input type="text" className="price-input" placeholder="USD" id="priceInput" onChange={(e) => this.setState({ price: e.target.value})} value={this.state.price}></input>
                             <label className="qty" htmlFor="qtyInput">Qty <span className="required">Required</span></label>
-                            <input type="number" className="qty-input" id="qtyInput"></input>
+                            <input type="number" className="qty-input" id="qtyInput" onChange={(e) => this.setState({ quantity: e.target.value})} value={this.state.quantity}></input>
                             <label className="gift-details" htmlFor="giftDetailsInput">Gift Details</label>
-                            <input type="text" className="gift-details-input" id="giftDetailsInput"></input>
+                            <input type="text" className="gift-details-input" id="giftDetailsInput" onChange={(e) => this.setState({ gift_details: e.target.value})} value={this.state.gift_details}></input>
                         </form>
                         <div className="content-media column">
                             <div className="content-media__image">
@@ -226,7 +228,7 @@ import {
                     </div>
                     <footer className="buttons-cancel-next">
                         <button onClick={(e) => this.goBack()} type="button" className="cancel-btn">Cancel</button>
-                        <button id="next-btn" className="next-btn">Save</button>
+                        <button className="next-btn" id="next-btn">Save</button>
                     </footer>
                 </div>;
         }    
@@ -246,3 +248,10 @@ export default withRouter(AddGiftModal);
 
                             // <label htmlFor="linkInput">Link <span className="optional">Optional</span></label>
                             // <input type="url" className="link-input" id="linkInput" onChange={(e) => this.setState({ link_url: e.target.value})} value={this.state.link_url} placeholder="https://www.tickets.com"></input>
+                            
+                        //     <div className="content-media column">
+                        // //     <div className="content-media__image">
+                        // //         <img src={logo2} width="250" height="190"></img>
+                        // //         <button className="btn-link content-media__upload-button">Upload a Photo</button>
+                        // //     </div>
+                        // // </div>
