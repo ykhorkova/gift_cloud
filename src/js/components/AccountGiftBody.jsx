@@ -10,13 +10,16 @@ import PagesCount from '../components/PagesCount.jsx';
 import AddGiftCompBtn from '../components/AddGiftCompBtn.jsx';
 import MyStore from '../stores/MyStore.jsx';
 import MyActions from '../actions/MyActions.jsx';
+import EditGiftOptions from '../components/EditGiftOptions.jsx';
 
 export default class AccountGiftBody extends Flux.Component{
     constructor(){
         super();
         
         this.state = {
-            gifts:[]
+            gifts:[],
+            // imageOne: 'https://images-na.ssl-images-amazon.com/images/I/81s7B%2BAls-L._AC_.jpg',
+            // imageTwo: 'https://images-na.ssl-images-amazon.com/images/I/61pnj4Go-4L._SL1001_.jpg'
         };
         this.bindStore(MyStore, () => {
             // this code gets executed everytime MyStore emits
@@ -26,7 +29,6 @@ export default class AccountGiftBody extends Flux.Component{
     }
     
     componentDidMount(){
-        MyActions.getGifts();
         const gifts = MyStore.getGifts();
         this.setState({ gifts });
         this.bindStore(MyStore,()=>{
@@ -42,13 +44,15 @@ export default class AccountGiftBody extends Flux.Component{
         const giftsInHtml = this.state.gifts.map((gift,i) => {
                 return <CardComponent
                             key={i} 
+                            imgIndex={i}
                             gift_name={gift.gift_name}
                             price={gift.price}
-                            date={gift.created_date}
                             store={gift.store_name}
                             id={gift.id}
                             privacy={gift.privacy}
                             gift_details={gift.gift_details}
+                            created_date = {gift.created_date}
+                            quantity = {gift.quantity}
                             // onSave={(p) => {
                                 
                             // }
@@ -65,8 +69,7 @@ export default class AccountGiftBody extends Flux.Component{
                 <div className="gift-item">
                     <div className="add-gift-btn-plus">
                         <div className="btn-round">
-                            <Link to="/addgift" className="btn-plus-icon"> +
-                            </Link>
+                            <Link to="/addgift" className="btn-plus-icon"> +</Link>
                         </div>
                         <div className="add-a-gift-action">
                             <h2 className="add-a-gift"> Add a new gift </h2>

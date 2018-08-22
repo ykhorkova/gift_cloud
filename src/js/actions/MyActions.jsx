@@ -108,9 +108,14 @@ class UserActions extends Flux.Action{
                     return resp.json();
                 }
            })
-           .then((gifts) => {
+           .then((badFormatedGifts) => {
                // distpatch to the store
-               this.dispatch('MyStore.setGifts',gifts);
+               const wellFormatedGifts = badFormatedGifts.map((gift) => {
+                   //console.log(gift.created_date);
+                   
+                   return gift;
+               });
+               this.dispatch('MyStore.setGifts',wellFormatedGifts);
            })
            .catch((error) => {
                console.log("There was an error ", error);
@@ -162,29 +167,27 @@ class UserActions extends Flux.Action{
     // }
 
 
-
-
-
-
-    editGift(idGift){
+    editGift(gift){
         let gifts = MyStore.getGifts();
         
-        fetch(this.host+'editgift/'+idGift, {
+        fetch(this.host+'editgift/'+gift.id, {
             method: 'POST',
+            body: JSON.stringify(gift),
             headers:{
                     'Authorization': this.token,
                     'Content-Type': 'application/json'
                 }
+                
         })
             .then(res => res.json())
             .then(response => {
                 gifts = gifts.forEach((mygift) => {
-                    if (mygift.id == idGift.id) {
-                        mygift.store_name == idGift.store_name;
-                        mygift.title == idGift.title;
-                        mygift.price == idGift.price;
-                        mygift.gift_choices == idGift.gift_choices;
-                        mygift.priority_choices == idGift.priority_choices;
+                    if (mygift.id == gift.id) {
+                        mygift.gift_name == gift.gift_name;
+                        mygift.price == gift.price;
+                        mygift.privacy == gift.privacy;
+                        mygift.quantity == gift.quantity;
+                        mygift.gift_details == gift.gift_details;
                     }
                 });
                 this.dispatch('MyStore.setGift',gifts);

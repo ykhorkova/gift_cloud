@@ -5,8 +5,8 @@ import MyActions from '../actions/MyActions.jsx';
 
 export default class EditGiftOptions extends Flux.Component{
     constructor(){
-    super();
-    
+        super();
+        this.state = {};
     }
     
     deleteGift(id){
@@ -18,6 +18,7 @@ export default class EditGiftOptions extends Flux.Component{
     }
     
     editGift(idGift){
+        console.log("id", idGift);
         MyActions.editGift(idGift);
     }
     
@@ -55,9 +56,9 @@ export default class EditGiftOptions extends Flux.Component{
                 </button>
                 <div className="dropdown-menu">
                     <div className="popover__options">
-                        <button onClick={(e) => this.editGift(this.props.id)} className="popover__option strip-btn">
+                        <button onClick={() => this.props.onEdit(this.props.id)} className="popover__option strip-btn">
                             <span className="icon"></span> 
-                            <Link to="/editgift" className="label"><i className="fas fa-pencil-alt"></i>Edit</Link>
+                            <span className="label"><i className="fas fa-pencil-alt"></i>Edit</span>
                         </button>
                         <hr className="popover__option--divider"></hr>
                         <button className="popover__option strip-btn">

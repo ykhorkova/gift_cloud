@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Footer from '../components/Footer.jsx';
 import HeaderAccount from '../components/HeaderAccount.jsx';
 import ProfileBody from '../components/ProfileBody.jsx';
+import AccountGiftBody from '../components/AccountGiftBody.jsx';
+
 
 
 
@@ -14,6 +16,7 @@ export default class Profile extends React.Component{
         return(<div>
             <HeaderAccount />
             <ProfileBody />
+            <AccountGiftBody />
             <Footer />
         </div>
         );

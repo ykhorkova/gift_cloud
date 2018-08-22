@@ -12,10 +12,10 @@ export default class ProfileBody extends React.Component{
                         <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/nerd-face.png"></img>
                     </div>
                     <h1 className="display-name">Awesome User</h1>
-                    <h2 className="username">@gift-cloud-371864090</h2>
+                    <h2 className="username">@gift-cloud-3718640</h2>
                 </div>
                 <div className="second-profile-header">
-                    <div className="btn-group ">
+                    <div className="btn-group">
                         <button type="button" className="btn btn-secondary" data-toggle="dropdown">
                             <i className="fas fa-cog"></i> Profile Options
                         </button>
@@ -26,7 +26,7 @@ export default class ProfileBody extends React.Component{
                                 </button>
                                 <hr className="popover__option--divider"></hr>
                                 <button className="popover__option strip-btn">
-                                    <span className="label"><i className="fas fa-share-square"></i>Share Public Gifts</span>
+                                    <span className="label"><i className="fas fa-share-square"></i>Share Gifts</span>
                                 </button>
                             </div>
                         </div>
