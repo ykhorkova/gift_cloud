@@ -5,7 +5,7 @@ class UserActions extends Flux.Action{
     
     constructor(){
         super();
-        this.host = 'https://ide.c9.io/yelic29/phyton-giftcloud';
+        this.host = 'https://phyton-giftcloud-yelic29.c9users.io/';
         this.token = '';
     }
     
