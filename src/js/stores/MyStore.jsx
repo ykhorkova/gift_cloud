@@ -5,11 +5,15 @@ class MyStore extends Flux.Store{
     
     constructor(){
         super();
+        const token = localStorage.getItem("token");
         this.state = {
             accountCreated: false,
             gifts:[],
-            LoginAccount: false
-
+            urlGifts: [],
+            LoginAccount: false,
+            login:{
+                token:token
+            }
         };
     }
     
@@ -50,6 +54,7 @@ class MyStore extends Flux.Store{
         this.setStoreState({
             login: login,
         }).emit();
+        localStorage.setItem("token", login.token);
     }
     
     
@@ -67,7 +72,22 @@ class MyStore extends Flux.Store{
        return this.state.gifts;
     }
     
+    // Gift URL
+    
+    // _setUrlGifts(urlGifts){
+    //   console.log('setGifts on the store',urlGifts);
+       
+    //   this.setStoreState({
+    //       urlGifts: urlGifts
+    //   }).emit();
+    // }
 
+    // getUrlGifts(){
+    //   return this.state.urlGifts;
+    // }
+    
+    
+    
     
  }
 export default new MyStore();

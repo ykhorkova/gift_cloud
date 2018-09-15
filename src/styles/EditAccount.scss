@@ -1,43 +1,143 @@
 .EditAccount{
-    background-color: #EDE7F6;
     
+    $text-color: #a6a4a2;
+    $purple: #A993CB;
+    $dark-gray: #6c6763;
+    font: 13px/23px 'Raleway', sans-serif;
+    color: $dark-gray;
 
-    .sidenav {
-    height: calc(100% - 72px);
-    width: 300px;
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    background-color: #F4F6F6;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    .flex-column{
+        margin-left: 10px;
+    }
+    
+    .col-3{
+        background: ghostWhite;
+        height: 100%;
+        max-width: 40%;
+        
+        .nav-link{
+            color: $dark-gray;
+            font: 16px 'Raleway', sans-serif;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .nav-link.active{
+            background-color: $purple;
+            color: ghostWhite;
+        }
+    }
+    
+    .col-9{
+        
+        .tab-content{
+            margin-left: 20px;
+            padding-top: 20px;
+        }    
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #b993d6;
-    display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #a6a4a2;
-}
-
-/* Style page content */
-.main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
+        .edit-profile__title{
+            text-transform: uppercase;
+            color: $dark-gray;
+            font-size: 12px;
+            
+        }
+        
+        h3{
+            font-size: 18px;
+            color: $purple;
+        }
+        
+        .account-email, .new-password-input, .password-input-confirm{
+            outline: none;
+            width: 50%;
+            border: 1px solid #d9d9d9;
+            border: none;
+            border-radius: 3px;
+            background: #f7f6f5;
+            // margin: 20px auto;
+            height: 50px;
+            padding-left: 10px;
+        }    
+        
+        .form-control{
+            border: none;
+            padding-top: 10px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            
+            
+            p{
+               font-size: 14px; 
+            }
+            
+            h4{
+               font-size: 16px;  
+            }
+        }
+        
+        .form-control__checkbox-text{
+            padding-left: 10px;
+        } 
+        
+        .save-notifications-btn, .change-password-btn, .save-account-btn{
+            margin: auto;
+            color: white;
+            font-size: 15px;
+            border-radius: 5px;
+            background: linear-gradient(#af96d4, #9b88b9);
+            cursor: pointer;
+            padding: 13px 20px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }    
+        
+       .edit-profile__more{ 
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            margin-left: 100px;
+            background-color: #f7f6f5;
+            
+            .title{
+                font-size: 14px;
+            }
+        }    
+         
+        .btn-social--facebook{ 
+            background-color: #3B5998;
+            color: white;
+            text-align: center;
+            width: 60%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            
+            i {
+            padding-right: 10px;
+            }
+        }    
+    
+        .btn-social--google{
+            background-color: #dd4b39;
+            color: white;
+            text-align: center;
+            width: 60%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            
+            i {
+                padding-right: 10px;
+    }
+        }
+            
+    }
+    
     
 }

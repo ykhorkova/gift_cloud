@@ -10,27 +10,15 @@ export default class FindFriends extends React.Component{
             <div>
                 <HeaderHome />
                 <div className="find-friends">
-                    <div className="conteiner">
-                        <div className="row">
-                            <div className="col-3 conteinerleft">
-                                
-                            </div>
-                            <div className="col-8 conteinercenter">
-                                <h2>Find Friends</h2>
-                                <p>Search for someone by name, email address, username, or organization.</p>
-                                <form>
-                                    <input className="input" type="text" name="search" placeholder="Search.." />
-                                </form>
-                                <div className="">
-                                    <title>icon-hint</title>
-                                    <div className="content">
-                                        <p>Not seeing who you’re looking for? 
-                                            <a href="#">Invite them!</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="container">
+                        <h2 className="find-friends-header">Find Friends</h2>
+                        <p className="find-friends-p">Search for someone by name, email address, username, or organization.</p>
+                        <form>
+                            <input className="input ff-input" type="text" name="search" placeholder="Search.." />
+                        </form>
+                        <p>Not seeing who you’re looking for? 
+                            <a href="#" className="invite">Invite them!</a>
+                        </p>
                     </div>
                 </div>    
                 <Footer />

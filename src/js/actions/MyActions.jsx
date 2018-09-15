@@ -7,6 +7,10 @@ class UserActions extends Flux.Action{
         super();
         this.host = 'https://phyton-giftcloud-yelic29.c9users.io/';
         this.token = '';
+        // this.giftUrl = "https://api.urlmeta.org/?url=";
+    
+        // this.userId = '';
+
     }
     
     // Account Actions
@@ -52,7 +56,7 @@ class UserActions extends Flux.Action{
                 
             })
             .then(response => {
-                this.token = 'token '+response.token;
+                // this.token = 'token '+response.token;
                 console.log('Add an account action!');
                     this.dispatch('MyStore.setLoginAccount', response);
             })
@@ -62,33 +66,6 @@ class UserActions extends Flux.Action{
             });
     }
     
-    // LOGOUT
-
-    // logoutAccount(logOutAccount){
-    //     fetch(this.host+'login/', {
-    //             method: 'POST',
-    //             credentials: 'same-origin',
-    //             headers:{
-    //                 // 'Authorization': 'Token afe2c0fbcd1955db8d62708dcef1b10e2c00bd9b',
-    //                 'Content-Type': 'application/json'
-    //             }
-
-    //         }).then(res => {
-    //             return res.json();
-                
-    //         })
-    //         .then(response => {
-    //             console.log('Add an account action!');
-    //                 this.dispatch('MyStore.setLoginAccount', response);
-    //         })
-    //         .catch(error => {
-    //             console.error('Error:', error);
-    //             this.dispatch('MyStore.setLoginAccount',false);
-    //         });
-    // }
-
-
-
 
     editAccount(idProfile){
         let accounts = MyStore.getAccounts();
@@ -115,10 +92,11 @@ class UserActions extends Flux.Action{
 
     getGifts(){
         console.log("GET-GIFTS", this.token);
-        console.log("GET-GIFTS2", MyStore.getToken());
+        // console.log("GET-GIFTS2", MyStore.getToken());
        fetch(this.host+'gift/', {
                 headers:{
-                    'Authorization': this.token,
+                    // 'Authorization': this.token,
+                    'Authorization': "Token " + MyStore.getToken(),
                     'Content-Type': 'application/json', 
                 }
             }
@@ -131,15 +109,19 @@ class UserActions extends Flux.Action{
                     return resp.json();
                 }
            })
-           .then((gifts) => {
+           .then((badFormatedGifts) => {
                // distpatch to the store
-               this.dispatch('MyStore.setGifts',gifts);
+               const wellFormatedGifts = badFormatedGifts.map((gift) => {
+                   //console.log(gift.created_date);
+                   
+                   return gift;
+               });
+               this.dispatch('MyStore.setGifts',wellFormatedGifts);
            })
            .catch((error) => {
                console.log("There was an error ", error);
        });
    }
-    
     
 
     createGift(incomingGift){
@@ -147,7 +129,7 @@ class UserActions extends Flux.Action{
                 method: 'PUT',
                 body: JSON.stringify(incomingGift),
                 headers:{
-                    'Authorization': this.token,
+                    'Authorization': "Token " + MyStore.getToken(),
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json())
@@ -164,26 +146,49 @@ class UserActions extends Flux.Action{
             });
     }
     
+    // createGiftWithUrl(pasteUrl){
+    //     fetch(this.giftUrl+ pasteUrl, {
+    //             mode: "no-cors", // no-cors, cors, *same-origin
+    //             //cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    //             // credentials: "same-origin", // include, same-origin, *omit
+    //             headers:{
+    //                 'Content-Type': 'application/json', 
+    //             }
+    //         }).then(res => res.json())
+    //         .then(response => {
+    //             console.log('Add an gift action!');
+ 
+                
+    //             this.dispatch('MyStore.setUrlGifts',pasteUrl);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+                
+    // }
 
-    editGift(idGift){
+
+    editGift(gift){
         let gifts = MyStore.getGifts();
         
-        fetch(this.host+'editgift/'+idGift, {
+        fetch(this.host+'editgift/'+gift.id, {
             method: 'POST',
+            body: JSON.stringify(gift),
             headers:{
                     'Authorization': this.token,
                     'Content-Type': 'application/json'
                 }
+                
         })
             .then(res => res.json())
             .then(response => {
                 gifts = gifts.forEach((mygift) => {
-                    if (mygift.id == idGift.id) {
-                        mygift.store_name == idGift.store_name;
-                        mygift.title == idGift.title;
-                        mygift.price == idGift.price;
-                        mygift.gift_choices == idGift.gift_choices;
-                        mygift.priority_choices == idGift.priority_choices;
+                    if (mygift.id == gift.id) {
+                        mygift.gift_name == gift.gift_name;
+                        mygift.price == gift.price;
+                        mygift.privacy == gift.privacy;
+                        mygift.quantity == gift.quantity;
+                        mygift.gift_details == gift.gift_details;
                     }
                 });
                 this.dispatch('MyStore.setGift',gifts);

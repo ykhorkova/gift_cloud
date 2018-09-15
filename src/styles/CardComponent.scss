@@ -9,13 +9,12 @@
   float: left;
   // height: 500px;
   
-  
+  .card{
+    width: 240px;
+    height: 330px;
+  }
 .card-header{
   padding: 0;
-}
-
-img{
-  width: 100%;
 }
 
 // .gift-priority{
@@ -31,15 +30,15 @@ img{
   border-style: 0.5px solid  $dark-gray;
   border-radius: 50%;
   background-color:  $text-color;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   color: ghostWhite;
   font-style: bold;
-  padding-top: 5px;
+  padding-top: 10px;
   margin: auto;
   position: absolute;
-  left: 120px;
-  top: 250px;
+  left: 100px;
+  top: 180px;
 }
 
 .card-body{
@@ -101,7 +100,7 @@ img{
 // }
 
 .card-title{
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .edit-gift-options{
@@ -173,13 +172,6 @@ img{
     text-decoration: underline;
   }
   
-  .card-img-top{
-    width: 70%;
-    border-style: 0.2px solid $purple;
-    border-radius: 5%;
-    background-color: ghostWhite;
-  }
-
   .gift-details{
     color: $dark-gray;
     padding-left: 5px;
@@ -217,3 +209,12 @@ img{
 
   
 }
+
+  .card-img-top{
+    width: 100%;
+    background-size: cover;
+    min-height: 200px;
+    min-width: 200px;
+    border-style: 0.2px solid $purple;
+    border-radius: 5%;
+  }
